@@ -1,0 +1,279 @@
+:root {
+  --yellow: #FABA58;
+  --blue: #0C394D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  color: var(--blue);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  position: sticky;
+  top: -1px;
+  background-color: white;
+  z-index: 1;
+}
+
+#logo {
+  width: 50px;
+  height: auto;
+}
+
+#nav-bar {
+  display: none;
+}
+
+#menu {
+  display: block;
+  font-size: 20px;
+}
+
+#title {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#video {
+  height: 100%;
+}
+
+h1 {
+  position: absolute;
+  text-align: center;
+  color: white;
+  min-width: 100%;
+  height: 100%;
+  padding-top: 22vh;
+  background-color: rgba(12, 58, 77, 0.4);
+  font-size: 2.5rem;
+}
+
+#company {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 20px 25px;
+  text-align: center;
+  line-height: 2rem;
+}
+
+#company hr {
+  width: 50%;
+  margin: 25px auto;
+  border: 1px solid rgba(12, 58, 77, 0.4);
+}
+
+#what-we-do {
+  background-color: var(--yellow);
+  text-align: center;
+  padding: 25px 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+#services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 50px 0;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+}
+
+.welding {
+  background-image: url('https://avozdaindustria.com.br/sites/cet.com/files/tipos%20de%20solda%20e%20soldagem%20industrial.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.service h3 {
+  font-size: 1.4rem;
+}
+
+.service p {
+  font-size: 1.1rem;
+  width: 50%;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 20px 25px;
+  text-align: center;
+}
+
+#profile-pic img {
+  width: 200px;
+  height: auto;
+  box-shadow: 2px 2px 5px var(--blue);
+}
+
+#about-text p {
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+  line-height: 1.3rem;
+}
+
+#contact-info {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 35px 25px;
+  background-color: var(--yellow);
+}
+
+#contact-info li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.media-logos {
+  width: 20px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+footer {
+  background-color: var(--blue);
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+footer h3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (min-width: 760px) {
+
+  #menu {
+    display: none;
+  }
+
+  #nav-bar {
+    display: flex;
+    gap: 30px;
+  }
+
+  #nav-bar li {
+    list-style: none;
+    font-size: 1.1rem;
+  }
+
+  #nav-bar li a {
+    text-decoration: none;
+    color: var(--blue)
+  }
+
+  #title {
+    height: auto;
+  }
+
+  #video {
+    width: 100vw;
+  }
+
+  #company {
+    font-size: 1.3rem;
+    padding: 10vh 18vw;
+  }
+
+  #company p {
+    margin: 6vh 0;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  #what-we-do {
+    padding-top: 50px;
+  }
+
+  #services-container {
+    flex-direction: row;
+    gap: 6vw;
+  }
+
+  .service-img {
+    width: 130px;
+    height: 130px;
+  }
+
+  #about {
+    flex-direction: row;
+    padding: 10vh 8vw;
+  }
+
+  #about-text p {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    line-height: 2rem;
+  }
+
+  #contact-info {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding: 8vh 8vw;
+  }
+
+  #h2-container {
+    width: 30%;
+  }
+
+  #contact-info li {
+    font-size: 1.2rem;
+  }
+
+  .media-logos {
+    width: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  h2 {
+    font-size: 2.7rem;
+  }
+
+}

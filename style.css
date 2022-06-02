@@ -232,6 +232,7 @@ footer h3 {
 
   #services-container {
     flex-direction: row;
+    align-items: flex-start;
     gap: 6vw;
   }
 

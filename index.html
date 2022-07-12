@@ -34,37 +34,50 @@
     <section id="company">
       <article>
         <hr>
-        <p>Com mais de 30 anos de experiência, a LH Mello Representações é especializada em fornecer soldas, rebimbocas e parafusetas de alta qualidade, garantindo um produto com performance de excelência.</p>
+        <p>Desde 2001, a LHMello Representações atua em soluções e melhorias de processos na manutenção e reparo, revestimentos de proteção contra o desgaste, através de soldagem e resinas especiais, garantindo produtos com alta performance e excelência, com apoio técnico constante.</p>
         <hr>
       </article>
     </section>
     <section id="what-we-do">
-      <h2>Serviços</h2>
+      <h2>Fornecemos</h2>
       <div id="services-container">
         <div class="service">
-          <div class="service-img welding"></div>
-          <h3>Soldas</h3>
-          <p>Alta durabilidade, tipo XRMSCV</p>
+          <div class="service-img-container">
+            <img src="./img/logoGMW.png" class="service-img" id="gmw">
+          </div>
+          <div class="service-description">
+            <h3>GMW Welding</h3>
+            <p>Soldas Especiais, eletrodos, varetas e arames sólidos/tubulares</p>
+          </div>
         </div>
         <div class="service">
-          <div class="service-img welding"></div>
-          <h3>Rebimbocas</h3>
-          <p>Capazes de tudo e mais um pouco</p>
+          <div class="service-img-container">
+            <img src="./img/logoAplipox.png" class="service-img">
+          </div>
+          <div>
+            <h3>Grupo Aplicar</h3>
+            <p>Tecnologia em composites.
+              Indústrias, Construtoras, Fertilizantes, Petroquímico, Siderurgia, Mineração.</p>
+          </div>
         </div>
         <div class="service">
-          <div class="service-img welding"></div>
-          <h3>Parafusetas</h3>
-          <p>RM-V de grande resistência</p>
+          <div class="service-img-container">
+            <img src="./img/logoMaxxweld.png" class="service-img">
+          </div>
+          <div>
+          <h3>Maxweld</h3>
+          <p>Chapas revestidas, tubos revestidos e serviço de recuperação mesa e rolos de moagem.</p>
+          </div>
         </div>
       </div>
     </section>
     <section id="about">
       <div id="profile-pic">
-        <img src="https://st.depositphotos.com/1144472/2003/i/450/depositphotos_20030237-stock-photo-cheerful-young-man-over-white.jpg" alt="Foto de LH Mello">
+        <img src="./img/logo.jpeg" alt="Logo LH Mello">
       </div>
       <div id="about-text">
-        <h2>Quem é LH Mello</h2>
-        <p>Atuando com materiais metálicos desde 1993, LH Mello já fez isso e aquilo e mais um pouco. Com experiência nas áreas de gestão, logística e tal, trabalhou junto a empresas de grande reconhecimento, como GMW e Aplipox</p>
+        <h2>A LH Mello</h2>
+        <p>Circulando pelo Rio Grande do Sul e Sul de Santa Catarina e dentro dos setores de manutenção e produção das indústrias, buscando melhoria de processos considerando custo/beneficios. Estudando mecanismos de desgaste, seus efeitos e possíveis soluções. </p>
       </div>
     </section>
     <section id="contact-info">
@@ -79,7 +92,15 @@
         </div>
       </div>
       <div id="h2-container">
-        <h2>Entre em contato</h2>
+        <form action="https://formsubmit.co/ppapinia@gmail.com" method="POST" onchange="formChange()">
+          <input type="text" name="name" id="input-name" required>
+          <input type="email" name="email" id="input-email" placeholder="Email Address">
+          <textarea placeholder="Your Message" name="message" rows="10" required></textarea>
+          <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html">
+          <input type="hidden" name="_subject" value="New submission!">
+          <input type="hidden" name="_captcha" value="false">
+          <button type="submit" onclick="alert('Mensagem enviada!')" id="submit-btn" disabled>Send</button>
+     </form>
       </div>
     </section>
   </main>
@@ -89,6 +110,18 @@
   <script>
     const video = document.getElementById('video');
     video.playbackRate = 0.4;
+
+    formChange = () => {
+      const name = document.getElementById('input-name').value;
+      const email = document.getElementById('input-email').value;
+      const submitBtn = document.getElementById('submit-btn');
+
+      const validEmail = email.includes('@')
+      console.log(validEmail)
+
+      submitBtn.disabled = !(name.length > 0 && validEmail);
+    }
+
   </script>
 </body>
 </html>

@@ -27,15 +27,12 @@ mobileMenuIcon.addEventListener('click', () => {
   if (menu.classList.contains('move-in')) {
     menu.classList.remove('move-in');
     menu.classList.add('move-out');
-  } else {
-    menu.classList.remove('move-out');
-    menu.classList.add('move-in');
-  }
-  if (mobileMenuIcon.classList.contains('menu-open')) {
     mobileMenuIcon.classList.remove('menu-open');
     mobileMenuIcon.classList.add('menu-close');
     mobileMenuIcon.innerHTML = '&#x2630;';
   } else {
+    menu.classList.remove('move-out');
+    menu.classList.add('move-in');
     mobileMenuIcon.classList.add('menu-open');
     mobileMenuIcon.classList.remove('menu-close');
     mobileMenuIcon.innerHTML = '&#x2715;';

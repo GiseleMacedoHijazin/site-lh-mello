@@ -9,7 +9,7 @@
   <!-- TODO 
   ** Menu for mobile
   ** Slider for mobile
-  ** Contact form -->
+  ** Contact form: change email and redirect on submit -->
 </head>
 <body>
   <header>
@@ -17,9 +17,9 @@
       <img src="./img/logo_azul.png" alt="Logo LH Mello - azul" id="logo">
     </div>
     <div>
-      <span id="menu">&#x2630;</span>
+      <span id="mobile-menu-icon">&#x2630;</span>
       <nav>
-        <ul id="nav-bar">
+        <ul id="nav-bar" class="move-out">
           <li class="nav-items"><a href="#company">A empresa</a></li>
           <li class="nav-items"><a href="#what-we-do">Soluções</a></li>
           <li class="nav-items"><a href="#about">Sobre</a></li>
@@ -134,8 +134,29 @@
 
     contactForm.addEventListener('keyup', formChange);
     submitBtn.addEventListener('click', (event) => {
-      // event.preventDefault();
       alert('Mensagem enviada!')
+    });
+
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+    const menu = document.getElementById('nav-bar')
+    
+    mobileMenuIcon.addEventListener('click', () => {
+      if (menu.classList.contains('move-in')) {
+        menu.classList.remove('move-in');
+        menu.classList.add('move-out');
+      } else {
+        menu.classList.remove('move-out');
+        menu.classList.add('move-in');
+      }
+      if (mobileMenuIcon.classList.contains('menu-open')) {
+        mobileMenuIcon.classList.remove('menu-open');
+        mobileMenuIcon.classList.add('menu-close');
+        mobileMenuIcon.innerHTML = '&#x2630;';
+      } else {
+        mobileMenuIcon.classList.add('menu-open');
+        mobileMenuIcon.classList.remove('menu-close');
+        mobileMenuIcon.innerHTML = '&#x2715;';
+      }
     });
   </script>
 </body>

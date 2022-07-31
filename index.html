@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LH Mello Representações</title>
   <link rel="stylesheet" href="style.css">
+  <!-- TODO 
+  ** Menu for mobile
+  ** Slider for mobile
+  ** Contact form -->
 </head>
 <body>
   <header>
@@ -80,27 +84,30 @@
         <p>Circulando pelo Rio Grande do Sul e Sul de Santa Catarina e dentro dos setores de manutenção e produção das indústrias, buscando melhoria de processos considerando custo/beneficios. Estudando mecanismos de desgaste, seus efeitos e possíveis soluções. </p>
       </div>
     </section>
-    <section id="contact-info">
-      <div class="container">
-        <ul id="info">
-          <li>lhmellorepresentacoes@gmail.com</li>
-          <li>(51) 981.864.660</li>
-        </ul>
-        <div id="media-container">
-          <a href="" target="_blank"><img src="./img/facebook_logo.png" alt="Facebook" class="media-logos"></a>
-          <a href="" target="_blank"></a><img src="./img/instagram_logo.png" alt="Instagram" class="media-logos"></a>
+    <section id="contact">
+      <h2>Entre em contato</h2>
+      <div id="contact-info">
+        <div class="container">
+          <ul id="info">
+            <li>lhmellorepresentacoes@gmail.com</li>
+            <li>(51) 981.864.660</li>
+          </ul>
+          <div id="media-container">
+            <a href="" target="_blank"><img src="./img/facebook_logo.png" alt="Facebook" class="media-logos"></a>
+            <a href="" target="_blank"></a><img src="./img/instagram_logo.png" alt="Instagram" class="media-logos"></a>
+          </div>
         </div>
-      </div>
-      <div id="h2-container">
-        <form action="https://formsubmit.co/ppapinia@gmail.com" method="POST" onchange="formChange()">
-          <input type="text" name="name" id="input-name" required>
-          <input type="email" name="email" id="input-email" placeholder="Email Address">
-          <textarea placeholder="Your Message" name="message" rows="10" required></textarea>
-          <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html">
-          <input type="hidden" name="_subject" value="New submission!">
+        <form id="contact-form" action="https://formsubmit.co/ppapinia@gmail.com" method="POST">
+          <div id="name-email-inputs">
+            <input type="text" name="name" id="input-name" placeholder="Nome">
+            <input type="email" name="email" id="input-email" placeholder="Email">
+          </div>
+          <textarea placeholder="Digite aqui a sua mensagem" name="message" rows="10" id="input-message"></textarea>
+          <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html#contact">
           <input type="hidden" name="_captcha" value="false">
-          <button type="submit" onclick="alert('Mensagem enviada!')" id="submit-btn" disabled>Send</button>
-     </form>
+          <input type="hidden" name="_subject" value="Nova mensagem do formulário de contato do site">
+          <button type="submit" id="submit-btn" disabled>Enviar</button>
+        </form>
       </div>
     </section>
   </main>
@@ -111,17 +118,25 @@
     const video = document.getElementById('video');
     video.playbackRate = 0.4;
 
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+
     formChange = () => {
       const name = document.getElementById('input-name').value;
       const email = document.getElementById('input-email').value;
-      const submitBtn = document.getElementById('submit-btn');
+      const message = document.getElementById('input-message').value;
 
-      const validEmail = email.includes('@')
-      console.log(validEmail)
+      const emailRegex = /\w+@\w+.com/;
+      const validEmail = emailRegex.test(email);
 
-      submitBtn.disabled = !(name.length > 0 && validEmail);
+      submitBtn.disabled = !(name.length > 0 && validEmail && message.length > 0);
     }
 
+    contactForm.addEventListener('keyup', formChange);
+    submitBtn.addEventListener('click', (event) => {
+      // event.preventDefault();
+      alert('Mensagem enviada!')
+    });
   </script>
 </body>
 </html>

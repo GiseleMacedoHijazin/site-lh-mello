@@ -1,8 +1,10 @@
 const video = document.getElementById('video');
-video.playbackRate = 0.4;
-
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
+const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+const menu = document.getElementById('nav-bar')
+
+video.playbackRate = 0.4;
 
 formChange = () => {
   const name = document.getElementById('input-name').value;
@@ -16,12 +18,7 @@ formChange = () => {
 }
 
 contactForm.addEventListener('keyup', formChange);
-submitBtn.addEventListener('click', (event) => {
-  alert('Mensagem enviada!')
-});
-
-const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-const menu = document.getElementById('nav-bar')
+submitBtn.addEventListener('click', () => alert('Mensagem enviada!'));
 
 mobileMenuIcon.addEventListener('click', () => {
   if (menu.classList.contains('move-in')) {
@@ -33,8 +30,8 @@ mobileMenuIcon.addEventListener('click', () => {
   } else {
     menu.classList.remove('move-out');
     menu.classList.add('move-in');
-    mobileMenuIcon.classList.add('menu-open');
     mobileMenuIcon.classList.remove('menu-close');
+    mobileMenuIcon.classList.add('menu-open');
     mobileMenuIcon.innerHTML = '&#x2715;';
   }
 });

@@ -37,7 +37,6 @@ header {
   width: 40vw;
   position: absolute;
   right: 0;
-  /* top: -190px; */
   padding: 10px 0 10px 20px;
   box-shadow: -1px 5px 5px rgba(12, 58, 77, 0.4);
 }
@@ -268,14 +267,32 @@ footer h3 {
 }
 
 @keyframes menu-in {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  0% {
+    opacity: 0;
+    top: -190px;
   }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 68px;
+  }
+}
 
 @keyframes menu-out {
-    from {opacity: 1;}
-    to {opacity: 0;}
+  0% {
+    opacity: 1;
+    top: 68px;
   }
+  40% {
+      opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -190px;
+  }
+}
 
 @keyframes menu-open {
   0% {color: #33333300;}

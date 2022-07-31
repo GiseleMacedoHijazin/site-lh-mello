@@ -240,6 +240,10 @@ h2 {
   opacity: 0.9;
 }
 
+#name-email-inputs {
+  line-height: 2.5rem;
+}
+
 .media-logos {
   width: 20px;
   margin-right: 10px;
@@ -395,12 +399,12 @@ footer h3 {
   }
 
   #contact {
-    gap: 0;
+    gap: 30px;
+    padding: 35px 0;
   }
   
   #contact-info {
     flex-direction: row;
-    padding: 8vh 8vw;
     gap: 0;
   }
 

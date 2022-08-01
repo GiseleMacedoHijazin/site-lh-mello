@@ -18,7 +18,7 @@ const services = [
   {
     name:'Maxweld',
     description: 'Chapas revestidas, tubos revestidos e serviço de recuperação mesa e rolos de moagem.',
-    img:'./img/logoMaxxweld.png',
+    img:'./img/logoMaxweld.jpeg',
   }
 ];
 let index = 0;

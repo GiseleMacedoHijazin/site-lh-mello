@@ -205,8 +205,8 @@ h2 {
 #profile-pic img {
   width: 250px;
   height: auto;
-  box-shadow: 2px 2px 5px var(--blue);
-  border-radius: 50%;
+  box-shadow: 1px 1px 6px var(--blue);
+  border-radius: 15%;
 }
 
 #about-text p {

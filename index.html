@@ -6,10 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LH Mello Representações</title>
   <link rel="stylesheet" href="style.css">
-  <!-- TODO 
-  ** Menu for mobile
-  ** Slider for mobile
-  ** Contact form: change email and redirect on submit -->
 </head>
 <body>
   <header>
@@ -23,6 +19,7 @@
           <li class="nav-items"><a href="#company">A empresa</a></li>
           <li class="nav-items"><a href="#what-we-do">Soluções</a></li>
           <li class="nav-items"><a href="#about">Sobre</a></li>
+          <li class="nav-items"><a href="#feedbacks">Depoimentos</a></li>
           <li class="nav-items"><a href="#contact-info">Contato</a></li>
         </ul>
       </nav>
@@ -91,6 +88,15 @@
           produtos e aplicações. Realiza palestras sobre soldagem para melhoria de processos. </p>
       </div>
     </section>
+    <section id="feedbacks">
+      <h2>Depoimentos</h2>
+      <div class="slider">
+        <button type='button' id='prev-btn-feedback'>&#10094;</button>
+        <div class='slider-container' id="shown-feedback">
+        </div>
+        <button type='button' id='next-btn-feedback'>&#10095;</button>
+      </div>
+    </section>
     <section id="contact">
       <h2>Entre em contato</h2>
       <div id="contact-info">
@@ -124,6 +130,7 @@
   <footer>
     <h3>&copy; LH Mello Representações, 2022</h3>
   </footer>
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -4,25 +4,32 @@ const submitBtn = document.getElementById('submit-btn');
 const mobileMenuIcon = document.getElementById('mobile-menu-icon');
 const menu = document.getElementById('nav-bar')
 const servicesContainer = document.getElementById('services-container');
-const services = [
-  {
-    name:'GMW Welding',
-    description: 'Soldas Especiais, eletrodos, varetas e arames sólidos/tubulares',
-    img:'./img/logoGMW.png',
-  },
-  {
-    name:'Grupo Aplicar',
-    description: 'Tecnologia em composites. Indústrias, Construtoras, Fertilizantes, Petroquímico, Siderurgia, Mineração.',
-    img:'./img/logoAplipox.png',
-  },
-  {
-    name:'Maxweld',
-    description: 'Chapas revestidas, tubos revestidos e serviço de recuperação mesa e rolos de moagem.',
-    img:'./img/logoMaxweld.jpeg',
-  }
-];
-let index = 0;
+const shownFeedback = document.getElementById('shown-feedback');
+const prevFeedbackBtn = document.getElementById('prev-btn-feedback');
+const nextFeedbackBtn = document.getElementById('next-btn-feedback');
+
 const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+let feedbackIndex = 0;
+const maxFeedback = customerFeedback.length - 1;
+
+const updateFeedback = () => {
+  shownFeedback.innerHTML = (`
+    <p>${ isMobile ? customerFeedback[feedbackIndex].mobile : customerFeedback[feedbackIndex].feedback}</p>
+    <h4>${customerFeedback[feedbackIndex].name}</h4>
+  `)
+}
+
+prevFeedbackBtn.addEventListener('click', () => {
+  feedbackIndex === 0 ? feedbackIndex = maxFeedback : feedbackIndex -= 1
+  updateFeedback()
+}) ;
+
+nextFeedbackBtn.addEventListener('click', () => {
+  feedbackIndex === maxFeedback ? feedbackIndex = 0 : feedbackIndex += 1
+  updateFeedback()
+}) ;
+
 
 formChange = () => {
   const name = document.getElementById('input-name').value;
@@ -35,24 +42,28 @@ formChange = () => {
   submitBtn.disabled = !(name.length > 0 && validEmail && message.length > 0);
 }
 
+let servicesIndex = 0;
+
 addIndex = () => {
-  index === 2 ? index = 0 : index += 1
+  servicesIndex === 2 ? servicesIndex = 0 : servicesIndex += 1
 }
 
 subIndex = () => {
-  index === 0 ? index = 2 : index -= 1
+  servicesIndex === 0 ? servicesIndex = 2 : servicesIndex -= 1
 }
 
 checkMobile = () => {
   if (isMobile) {
     servicesContainer.innerHTML = (`
-      <button type='button' id='prev-btn' onclick={subIndex()}>&#10094;</button>
-      <div class='slider-container'>
-        <img src=${services[index].img} alt=${services[index].name} />
-        <h3>${services[index].name}</h3>
-        <p>${services[index].description}</p>
+      <div class='slider'>
+        <button type='button' id='prev-btn' onclick={subIndex()}>&#10094;</button>
+        <div class='slider-container'>
+          <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} />
+          <h3>${services[servicesIndex].name}</h3>
+          <p>${services[servicesIndex].description}</p>
+        </div>
+        <button type='button' id='next-btn' onclick={addIndex()}>&#10095;</button>
       </div>
-      <button type='button' id='next-btn' onclick={addIndex()}>&#10095;</button>
     `);
     servicesContainer.addEventListener('click', checkMobile)
   }
@@ -79,4 +90,5 @@ mobileMenuIcon.addEventListener('click', () => {
   }
 });
 
+updateFeedback();
 checkMobile();

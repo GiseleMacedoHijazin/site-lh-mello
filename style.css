@@ -123,7 +123,7 @@ h2 {
   font-size: 2rem;
 }
 
-#services-container {
+#services-container, .slider {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -174,7 +174,7 @@ h2 {
   max-height: 300px;
 }
 
-#services-container button {
+.slider button {
   cursor: pointer;
   width: auto;
   margin: 0 10px;
@@ -188,7 +188,7 @@ h2 {
   background-color: transparent;
 }
 
-#services-container button:hover {
+.slider button:hover {
   background-color: rgba(255,255,255,0.3)
 } 
 
@@ -215,6 +215,33 @@ h2 {
   margin-top: 15px;
   line-height: 1.3rem;
 }
+
+#feedbacks {
+  text-align: center;
+}
+
+#shown-feedback p {
+  text-align: left;
+  position: relative;
+  font-size: 1rem;
+}
+
+#shown-feedback p::before {
+  content: '“';
+  position: absolute;
+  font-size: 6rem;
+  top: -45px;
+  left: -45px;
+  font-family: cursive;
+  opacity: 0.5;
+}
+
+
+#shown-feedback h4 {
+  text-align: end;
+  font-size: 1rem;
+}
+
 
 #contact {
   padding: 35px 25px;
@@ -428,6 +455,20 @@ footer h3 {
     font-size: 1.2rem;
     margin-top: 30px;
     line-height: 2rem;
+  }
+
+  #shown-feedback p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  #shown-feedback p::before {
+    top: -10px;
+    left: -35px;
+  }
+  
+  #shown-feedback h4 {
+    font-size: 1.2rem;
   }
 
   #contact {

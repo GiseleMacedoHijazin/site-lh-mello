@@ -1,19 +1,34 @@
 const services = [
   {
-    name:'GMW Welding',
-    description: 'Soldas Especiais, eletrodos, varetas e arames sólidos/tubulares',
-    img:'./img/logoGMW.png',
+    name:'Consumíveis de solda',
+    description: 'Eletrodos revestidos, varetas tig, arames sólidos e tubulares.',
+    img:'./img/supplies/consumiveis_solda.jpg',
   },
   {
-    name:'Grupo Aplicar',
-    description: 'Tecnologia em composites. Indústrias, Construtoras, Fertilizantes, Petroquímico, Siderurgia, Mineração.',
-    img:'./img/logoAplipox.png',
+    name:'Resinas de alta performance',
+    description: 'Aplicações na manutenção e reparo e revestimentos',
+    img:'',
   },
   {
-    name:'Maxweld',
-    description: 'Chapas revestidas, tubos revestidos e serviço de recuperação mesa e rolos de moagem.',
-    img:'./img/logoMaxweld.jpeg',
-  }
+    name:'Cerâmica técnica de alta alumina',
+    description: 'Ótima resistência ao desgaste',
+    img:'./img/supplies/ceramica_tecnica.png',
+  },
+  {
+    name:'Material soldável mais duro do mundo',
+    description: '',
+    img:'./img/supplies/material_soldavel.png',
+  },
+  {
+    name:'Placas e tubulações revestidas e projetos sob desenho',
+    description: '',
+    img:'./img/supplies/placas_tubulacoes.png',
+  },
+  {
+    name:'Palestras técnicas sobre soldagem ',
+    description: 'Focadas em processos.',
+    img:'./img/supplies/palestras.jpeg',
+  },
 ];
 const customerFeedback = [
   {

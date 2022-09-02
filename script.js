@@ -1,37 +1,95 @@
 const video = document.getElementById('video');
-const contactForm = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
 const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-const menu = document.getElementById('nav-bar')
-const servicesContainer = document.getElementById('services-container');
+const menu = document.getElementById('nav-bar');
+const shownServices = document.getElementById('shown-services');
+const prevServicesBtn = document.getElementById('prev-btn-services');
+const nextServicesBtn = document.getElementById('next-btn-services');
 const shownFeedback = document.getElementById('shown-feedback');
 const prevFeedbackBtn = document.getElementById('prev-btn-feedback');
 const nextFeedbackBtn = document.getElementById('next-btn-feedback');
-
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
 const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+video.playbackRate = 0.4;
+
+let servicesIndex = 0;
+const maxServices = isMobile ? services.length - 1 : 3; 
+const indexJump = isMobile ? 1 : 3;
+
+servicesSlider = () => {
+  if (isMobile) {
+    shownServices.innerHTML = (`
+      <div class='slider-container'>
+        <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} />
+        <h3>${services[servicesIndex].name}</h3>
+        <p>${services[servicesIndex].description}</p>
+      </div>
+    `);
+    return;
+  }
+  shownServices.innerHTML = (`
+    <div class='service'>
+      <div class="service-img-container">
+        <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} class='service-img' />
+      </div>
+      <div class="service-description">
+        <h3>${services[servicesIndex].name}</h3>
+        <p>${services[servicesIndex].description}</p>
+      </div>
+    </div>
+    <div class='service'>
+      <div class="service-img-container">
+        <img src=${services[servicesIndex + 1].img} alt=${services[servicesIndex + 1].name} class='service-img' />
+      </div>
+      <div class="service-description">
+        <h3>${services[servicesIndex + 1].name}</h3>
+        <p>${services[servicesIndex + 1].description}</p>
+      </div>
+    </div>
+    <div class='service'>
+      <div class="service-img-container">
+        <img src=${services[servicesIndex + 2].img} alt=${services[servicesIndex + 2].name} class='service-img' />
+      </div>
+      <div class="service-description">
+        <h3>${services[servicesIndex + 2].name}</h3>
+        <p>${services[servicesIndex + 2].description}</p>
+      </div>
+    </div>
+  `) ;
+}
+
+prevServicesBtn.addEventListener('click', () => {
+  servicesIndex === 0 ? servicesIndex = maxServices : servicesIndex -= indexJump
+  servicesSlider()
+});
+
+nextServicesBtn.addEventListener('click', () => {
+  servicesIndex >= maxServices ? servicesIndex = 0 : servicesIndex += indexJump
+  servicesSlider()
+});
 
 let feedbackIndex = 0;
 const maxFeedback = customerFeedback.length - 1;
 
-const updateFeedback = () => {
+const feedbackSlider = () => {
   shownFeedback.innerHTML = (`
     <p>${ isMobile ? customerFeedback[feedbackIndex].mobile : customerFeedback[feedbackIndex].feedback}</p>
     <h4>${customerFeedback[feedbackIndex].name}</h4>
-  `)
+  `);
 }
 
 prevFeedbackBtn.addEventListener('click', () => {
   feedbackIndex === 0 ? feedbackIndex = maxFeedback : feedbackIndex -= 1
-  updateFeedback()
-}) ;
+  feedbackSlider()
+});
 
 nextFeedbackBtn.addEventListener('click', () => {
   feedbackIndex === maxFeedback ? feedbackIndex = 0 : feedbackIndex += 1
-  updateFeedback()
-}) ;
+  feedbackSlider()
+});
 
-
-formChange = () => {
+const formChange = () => {
   const name = document.getElementById('input-name').value;
   const email = document.getElementById('input-email').value;
   const message = document.getElementById('input-message').value;
@@ -41,35 +99,6 @@ formChange = () => {
 
   submitBtn.disabled = !(name.length > 0 && validEmail && message.length > 0);
 }
-
-let servicesIndex = 0;
-
-addIndex = () => {
-  servicesIndex === 2 ? servicesIndex = 0 : servicesIndex += 1
-}
-
-subIndex = () => {
-  servicesIndex === 0 ? servicesIndex = 2 : servicesIndex -= 1
-}
-
-checkMobile = () => {
-  if (isMobile) {
-    servicesContainer.innerHTML = (`
-      <div class='slider'>
-        <button type='button' id='prev-btn' onclick={subIndex()}>&#10094;</button>
-        <div class='slider-container'>
-          <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} />
-          <h3>${services[servicesIndex].name}</h3>
-          <p>${services[servicesIndex].description}</p>
-        </div>
-        <button type='button' id='next-btn' onclick={addIndex()}>&#10095;</button>
-      </div>
-    `);
-    servicesContainer.addEventListener('click', checkMobile)
-  }
-}
-
-video.playbackRate = 0.4;
 
 contactForm.addEventListener('keyup', formChange);
 submitBtn.addEventListener('click', () => alert('Mensagem enviada!'));
@@ -90,5 +119,5 @@ mobileMenuIcon.addEventListener('click', () => {
   }
 });
 
-updateFeedback();
-checkMobile();
+feedbackSlider();
+servicesSlider();

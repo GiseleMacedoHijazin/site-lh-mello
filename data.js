@@ -15,19 +15,19 @@ const services = [
     img:'./img/supplies/ceramica_tecnica.png',
   },
   {
-    name:'Material soldável mais duro do mundo',
-    description: '',
+    name:'Nome do material',
+    description: 'Material soldável mais duro do mundo',
     img:'./img/supplies/material_soldavel.png',
   },
   {
-    name:'Placas e tubulações revestidas e projetos sob desenho',
-    description: '',
+    name:'Placas e tubulações revestidas',
+    description: 'Projetos sob desenho',
     img:'./img/supplies/placas_tubulacoes.png',
   },
   {
     name:'Palestras técnicas sobre soldagem ',
     description: 'Focadas em processos.',
-    img:'./img/supplies/palestras.jpeg',
+    img:'./img/supplies/palestras.jpg',
   },
 ];
 const customerFeedback = [

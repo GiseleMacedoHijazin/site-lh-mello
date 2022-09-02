@@ -123,7 +123,7 @@ h2 {
   font-size: 2rem;
 }
 
-#services-container, .slider {
+.slider {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -132,26 +132,42 @@ h2 {
   margin: 50px 0;
 }
 
+#services-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#prev-btn-services {
+  margin-left: 70px;
+  margin-right: 0;
+}
+
+#next-btn-services {
+  margin-right: 70px;
+  margin-left: 0;
+}
+
+
 .service {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  justify-content:center;
+  height: 300px;
 }
 
 .service-img {
   width: 120px;
   height: auto;
-}
-
-.welding {
-  background-image: url('https://avozdaindustria.com.br/sites/cet.com/files/tipos%20de%20solda%20e%20soldagem%20industrial.png');
-  background-size: cover;
-  background-position: center;
+  border-radius: 2px;
 }
 
 .service h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .service p {
@@ -411,9 +427,19 @@ footer h3 {
     padding-top: 50px;
   }
 
+  #what-we-do h2 {
+    margin-bottom: 70px;
+  }
+
   #services-container {
     align-items: center;
-    gap: 6vw;
+  }
+
+  #shown-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .service {
@@ -421,7 +447,7 @@ footer h3 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -432,18 +458,16 @@ footer h3 {
 
   .service-img-container {
     width: 250px;
-    height: 150px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .service-img {
     width: 100%;
-  }
-
-  #gmw {
-    width: 55%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   }
 
   #about {

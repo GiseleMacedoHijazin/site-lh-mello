@@ -5,6 +5,7 @@ const shownServices = document.getElementById('shown-services');
 const prevServicesBtn = document.getElementById('prev-btn-services');
 const nextServicesBtn = document.getElementById('next-btn-services');
 const partnersContainer = document.getElementById('partners-container');
+const applicationsContainer = document.getElementById('applications-container');
 const shownFeedback = document.getElementById('shown-feedback');
 const prevFeedbackBtn = document.getElementById('prev-btn-feedback');
 const nextFeedbackBtn = document.getElementById('next-btn-feedback');
@@ -76,6 +77,47 @@ partners.forEach((partner) => {
   img.alt = partner.split('/')[3].split('.')[0];
   partnersContainer.append(img);
 });
+
+const toggleContent = (appImages) => {
+  const currentShown = document.querySelector('.show');
+  if (currentShown && currentShown !== appImages) { 
+    currentShown.classList.remove('show');
+    currentShown.classList.add('hide');
+  }
+  if (appImages.className.includes('hide')) {
+    appImages.classList.remove('hide');
+    appImages.classList.add('show');
+  } else {
+    appImages.classList.remove('show');
+    appImages.classList.add('hide');
+  }
+}
+
+applications.forEach((application) => {
+  const container = document.createElement('div');
+  container.className = 'card';
+  container.innerHTML = (`
+    <p>${application.name}</p>
+    <p>&plus;</p>
+  `);
+
+  const appImages = document.createElement('div');
+  appImages.className = 'hide app-images-container';
+
+  application.content.forEach((item) => {
+    const itemCard = document.createElement('div');
+    itemCard.className = 'item-card';
+    itemCard.innerHTML = (`
+      <img src=${item.img} alt=${item.text} />
+      <p>${item.text}</p>
+    `);
+    appImages.append(itemCard);
+  })
+
+  container.append(appImages);
+  container.addEventListener('click', () => toggleContent(appImages));
+  applicationsContainer.append(container);
+})
 
 let feedbackIndex = 0;
 const maxFeedback = customerFeedback.length - 1;

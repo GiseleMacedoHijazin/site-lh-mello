@@ -61,3 +61,18 @@ const customerFeedback = [
     mobile: 'Parabéns Mello, são essas trocas de conhecimento e experiências que fazem a empresa crescer cada vez mais.'
   },
 ];
+
+const applications = [
+  { name: 'Forjaria',
+    content: [
+      { text: 'Trincas no martelo', img: './img/applications/forjaria/trincas_martelo.png' },
+      { text: 'Camisa do martelo', img: './img/applications/forjaria/camisa_martelo.png' },
+    ],
+  },
+  { name: 'Fundição',
+    content: [
+      { text: 'Destorrador', img: './img/applications/fundicao/destorrador.png' },
+    ],
+  },
+
+];

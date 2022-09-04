@@ -394,6 +394,23 @@ footer h3 {
   font-weight: 500;
 }
 
+.app-images-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
 .move-in {
   top: 68px !important;
   animation: menu-in .5s;

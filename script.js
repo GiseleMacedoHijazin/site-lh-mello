@@ -4,6 +4,7 @@ const menu = document.getElementById('nav-bar');
 const shownServices = document.getElementById('shown-services');
 const prevServicesBtn = document.getElementById('prev-btn-services');
 const nextServicesBtn = document.getElementById('next-btn-services');
+const partnersContainer = document.getElementById('partners-container');
 const shownFeedback = document.getElementById('shown-feedback');
 const prevFeedbackBtn = document.getElementById('prev-btn-feedback');
 const nextFeedbackBtn = document.getElementById('next-btn-feedback');
@@ -67,6 +68,13 @@ prevServicesBtn.addEventListener('click', () => {
 nextServicesBtn.addEventListener('click', () => {
   servicesIndex >= maxServices ? servicesIndex = 0 : servicesIndex += indexJump
   servicesSlider()
+});
+
+partners.forEach((partner) => {
+  const img = document.createElement('img');
+  img.src = partner;
+  img.alt = partner.split('/')[3].split('.')[0];
+  partnersContainer.append(img);
 });
 
 let feedbackIndex = 0;

@@ -15,7 +15,7 @@ const services = [
     img:'./img/supplies/ceramica_tecnica.png',
   },
   {
-    name:'Nome do material',
+    name:'Ferobide',
     description: 'Material soldável mais duro do mundo',
     img:'./img/supplies/material_soldavel.png',
   },
@@ -30,6 +30,15 @@ const services = [
     img:'./img/supplies/palestras.jpg',
   },
 ];
+
+const partners = [
+  './img/partners/gmw.png',
+  './img/partners/aplipox.png',
+  './img/partners/ferobide.png',
+  './img/partners/solcera.png',
+  './img/partners/maxweld.png',
+];
+
 const customerFeedback = [
   {
     name: 'Daniel, Soldare Soldas Especiais',

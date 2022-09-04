@@ -206,7 +206,28 @@ h2 {
 
 .slider button:hover {
   background-color: rgba(255,255,255,0.3)
-} 
+}
+
+#partners {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#partners-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#partners-container img {
+  width: 60vw;
+  max-width: 300px;
+  opacity: 0.85;
+}
 
 #about {
   display: flex;
@@ -468,6 +489,14 @@ footer h3 {
   .service-img {
     width: 100%;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  #partners-container {
+    flex-direction: row;
+    gap: 100px;
+    flex-wrap: wrap;
+    width: 90vw;
+    max-width: 1200px;
   }
 
   #about {

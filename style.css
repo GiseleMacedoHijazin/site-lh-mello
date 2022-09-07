@@ -229,6 +229,39 @@ h2 {
   opacity: 0.85;
 }
 
+#applications {
+  background-color: var(--blue);
+  color: white
+}
+
+#applications h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#applications-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  max-width: 1000px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+#applications-container .card {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  padding: 30px 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.app-images-container {
+  position: absolute;
+  top: 150%;
+}
+
 #about {
   display: flex;
   flex-direction: column;
@@ -273,12 +306,10 @@ h2 {
   opacity: 0.5;
 }
 
-
 #shown-feedback h4 {
   text-align: end;
   font-size: 1rem;
 }
-
 
 #contact {
   padding: 35px 25px;
@@ -550,6 +581,18 @@ footer h3 {
     flex-wrap: wrap;
     width: 90vw;
     max-width: 1200px;
+  }
+
+  #applications-container {
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #applications-container .card {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 
   #about {

@@ -7,7 +7,7 @@ const services = [
   {
     name:'Resinas de alta performance',
     description: 'Aplicações na manutenção e reparo e revestimentos',
-    img:'',
+    img:'./img/supplies/resinas.png',
   },
   {
     name:'Cerâmica técnica de alta alumina',
@@ -63,16 +63,109 @@ const customerFeedback = [
 ];
 
 const applications = [
-  { name: 'Forjaria',
+  { 
+    name: 'Forjaria',
     content: [
       { text: 'Trincas no martelo', img: './img/applications/forjaria/trincas_martelo.png' },
       { text: 'Camisa do martelo', img: './img/applications/forjaria/camisa_martelo.png' },
+      { text: 'Matriz de forjaria', img: './img/applications/forjaria/matriz_forjaria.png' },
+      { text: 'Rebarbador', img: './img/applications/forjaria/rebarbador.png' },
+      { text: 'Rebarbador - segmentos', img: './img/applications/forjaria/rebarbador_segmentos.jpg' },
     ],
   },
-  { name: 'Fundição',
+  { 
+    name: 'Fundição',
     content: [
       { text: 'Destorrador', img: './img/applications/fundicao/destorrador.png' },
+      { text: 'Lateral e fundo do misturador de areia', img: './img/applications/fundicao/misturador_areia.png' },
+      { text: 'Pá do misturador', img: './img/applications/fundicao/pa_misturador.png' },
+      { text: 'Recuperação de falha de fundição', img: './img/applications/fundicao/falha_fundicao.png' },
+      { text: 'Tubulações e curvas: recuperação e revestimento', img: './img/applications/fundicao/tubulacoes_curvas.png' },
+      { text: 'Revestimento do transporte pneumático de areia', img: './img/applications/fundicao/transporte_areia.jpeg' },
     ],
   },
-
+  { 
+    name: 'Cimento',
+    content: [
+      { text: 'Discos do britador', img: './img/applications/cimento/discos_britador.png' },
+      { text: 'Recuperação do rolo de moagem', img: './img/applications/cimento/rolo_moagem.png' },
+      { text: 'Recuperação da mesa do moinho', img: './img/applications/cimento/mesa_moinho.png' },
+      { text: 'Curvas e tubulações revestidas', img: './img/applications/cimento/curvas_tubulacoes.png' },
+      { text: 'Placas no moinho de Cru', img: './img/applications/cimento/placas_moinho.png' },
+      { text: 'Testeira de moinho', img: './img/applications/cimento/testeira_moinho.png' },
+      { text: 'Rotor de despoeiramento', img: './img/applications/cimento/rotor.png' },
+      { text: 'Munhão', img: './img/applications/cimento/munhao.png' },
+    ],
+  },
+  { 
+    name: 'Fertilizantes',
+    content: [
+      { text: 'Ataque químico/oxidação', img: './img/applications/fertilizantes/ataque_quimico.png' },
+      { text: 'Recuperação/revestimento', img: './img/applications/fertilizantes/recuperacao.png' },
+      { text: 'Rosca transportadora', img: './img/applications/fertilizantes/rosca_transportadora.png' },
+      { text: 'Recuperação estrutural e revestimento no depósito de enxofre', img: './img/applications/fertilizantes/deposito_enxofre.jpg' },
+      { text: 'Tubulações revestidas, abrasão/corrosão', img: './img/applications/fertilizantes/tubulacoes_revestidas.png' },
+      { text: 'Martelos', img: './img/applications/fertilizantes/martelos.png' },
+    ],
+  },
+  { 
+    name: 'Celulose e papel',
+    content: [
+      { text: 'Bomba de vácuo', img: './img/applications/celulose_papel/bomba_vacuo.png' },
+      { text: 'Faca e contrafaca do picador', img: './img/applications/celulose_papel/faca_picador.png' },
+      { text: 'Recuperações estruturais', img: './img/applications/celulose_papel/recuperacoes.png' },
+      { text: 'Roscas transportadoras', img: './img/applications/celulose_papel/roscas_transportadoras.jpg' },
+      { text: 'Curvas e tubulações revestidas', img: './img/applications/celulose_papel/curvas_tubulacoes.png' },
+      { text: 'Peças revestidas conforme projeto e desenho', img: './img/applications/celulose_papel/pecas_revestidas.png' },
+    ],
+  },
+  {
+    name: 'Agronegócio e biocombustíveis',
+    content: [
+      { text: 'Recuperação em tubulações', img: './img/applications/agronegocio/tubulacoes.png' },
+      { text: 'Recuperação/revestimento ataque químico', img: './img/applications/agronegocio/ataque_quimico.png' },
+      { text: 'Sapata de colheitadeira', img: './img/applications/agronegocio/sapata.png' },
+      { text: 'Cabeça e caneca de elevador', img: './img/applications/agronegocio/elevador.png' },
+      { text: 'Carregamento e descarregamento de grãos', img: './img/applications/agronegocio/graos.png' },
+      { text: 'Revestimento de silos', img: './img/applications/agronegocio/revestimento_silos.png' },
+      { text: 'Chapas revestidas', img: './img/applications/agronegocio/chapas_revestidas.png' },
+    ],
+  },
+  {
+    name: 'Siderurgia',
+    content: [
+      { text: 'Peneiras', img: './img/applications/siderurgia/peneiras.png' },
+      { text: 'Curvas e tubulações', img: './img/applications/siderurgia/curvas_tubulacoes.png' },
+      { text: 'Rolo de laminação', img: './img/applications/siderurgia/rolo_laminacao.png' },
+      { text: 'Rosca transportadora', img: './img/applications/siderurgia/rosca_transportadora.png' },
+      { text: 'Calhas', img: './img/applications/siderurgia/calhas.png' },
+      { text: 'Rotor', img: './img/applications/siderurgia/rotor.png' },
+      { text: 'Calha aciaria', img: './img/applications/siderurgia/calha_aciaria.png' },
+      { text: 'Martelo, quebrador de sínter, barras', img: './img/applications/siderurgia/martelos.png' },
+    ],
+  },
+  {
+    name: 'Cerâmicas e telhas',
+    content: [
+      { text: 'Réguas', img: './img/applications/ceramicas_telhas/reguas.png' },
+      { text: 'Rosca transportadora de argila', img: './img/applications/ceramicas_telhas/rosca_argila.jpeg' },
+      { text: 'Boquilha', img: './img/applications/ceramicas_telhas/boquilha.png' },
+      { text: 'Pá misturadora de argila', img: './img/applications/ceramicas_telhas/pa_argila.jpeg' },
+    ],
+  },
+  {
+    name: 'Mineração',
+    content: [
+      { text: 'Bombas: recuperação e revestimento', img: './img/applications/mineracao/bombas.png' },
+      { text: 'Silos e chutes', img: './img/applications/mineracao/silos.png' },
+      { text: 'Proteção do cone britador', img: './img/applications/mineracao/cone_britador.png' },
+      { text: 'Revestimento de calhas', img: './img/applications/mineracao/revestimento_calhas.png' },
+      { text: 'Rolo britador', img: './img/applications/mineracao/rolo_britador.png' },
+      { text: 'Britador de mamicas', img: './img/applications/mineracao/britador_mamicas.png' },
+      { text: 'Alimentador', img: './img/applications/mineracao/alimentador.png' },
+      { text: 'Redução', img: './img/applications/mineracao/reducao.png' },
+      { text: 'Tubulação - meio denso', img: './img/applications/mineracao/tubulacao_denso.png' },
+      { text: 'Revestimento do lavador', img: './img/applications/mineracao/lavador.jpeg' },
+    ],
+  },
 ];

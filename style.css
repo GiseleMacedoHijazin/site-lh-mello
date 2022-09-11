@@ -164,6 +164,7 @@ h2 {
   width: 120px;
   height: auto;
   border-radius: 2px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .service h3 {
@@ -237,16 +238,22 @@ h2 {
 #applications h2 {
   text-align: center;
   padding-top: 30px;
+  margin-bottom: 30px;
 }
 
 #applications-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  padding: 0 15px;
   max-width: 1000px;
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  /* position: relative */
+}
+
+#applications-container .card-parent {
+  width: 100%;
 }
 
 #applications-container .card {
@@ -254,13 +261,40 @@ h2 {
   display: flex;
   padding: 30px 20px;
   justify-content: space-between;
-  position: relative;
+  width: 100%;
+  transition: background-color .3s;
 }
 
 .app-images-container {
-  position: absolute;
-  top: 150%;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffffff15;
 }
+
+.app-images-container img {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+.app-images-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.app-images-container::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 5px;
+}
+
+.app-images-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+} 
 
 #about {
   display: flex;
@@ -439,7 +473,26 @@ footer h3 {
 }
 
 .hide {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.show {
+  visibility: visible;
+  animation: showImages .5s;
+}
+
+.selected {
+  background-color: white !important;
+  color: var(--blue) !important;
+}
+
+@keyframes showImages {
+  0% { height: 0;}
+  100% { height: 200px; }
 }
 
 .move-in {
@@ -572,7 +625,6 @@ footer h3 {
 
   .service-img {
     width: 100%;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   }
 
   #partners-container {
@@ -589,10 +641,12 @@ footer h3 {
     flex-wrap: wrap;
   }
 
-  #applications-container .card {
-    flex-basis: 300px;
-    flex-grow: 0;
-    flex-shrink: 0;
+  #applications-container .card-parent {
+    width: 32%;
+  }
+
+  .app-images-container {
+    width: 309%;
   }
 
   #about {

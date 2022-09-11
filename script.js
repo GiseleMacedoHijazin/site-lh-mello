@@ -78,22 +78,28 @@ partners.forEach((partner) => {
   partnersContainer.append(img);
 });
 
-const toggleContent = (appImages) => {
+const toggleContent = (appImages, container) => {
   const currentShown = document.querySelector('.show');
   if (currentShown && currentShown !== appImages) { 
     currentShown.classList.remove('show');
+    currentShown.parentElement.children[0].classList.remove('selected');
     currentShown.classList.add('hide');
   }
   if (appImages.className.includes('hide')) {
     appImages.classList.remove('hide');
     appImages.classList.add('show');
+    container.classList.add('selected');
   } else {
     appImages.classList.remove('show');
     appImages.classList.add('hide');
+    container.classList.remove('selected');
   }
 }
 
 applications.forEach((application) => {
+  const containerParent = document.createElement('div');
+  containerParent.className = 'card-parent';
+
   const container = document.createElement('div');
   container.className = 'card';
   container.innerHTML = (`
@@ -114,9 +120,19 @@ applications.forEach((application) => {
     appImages.append(itemCard);
   })
 
-  container.append(appImages);
-  container.addEventListener('click', () => toggleContent(appImages));
-  applicationsContainer.append(container);
+  containerParent.append(container);
+  containerParent.append(appImages);
+  container.addEventListener('click', () => toggleContent(appImages, container));
+  applicationsContainer.append(containerParent);
+
+  if(!isMobile) {
+    const position = applicationsContainer.children.length;
+    if ([2, 5, 8].includes(position)) {
+      appImages.style.right = '105%';
+    } else if ([3, 6, 9].includes(position)) {
+      appImages.style.right = '210%';
+    }
+  }
 })
 
 let feedbackIndex = 0;

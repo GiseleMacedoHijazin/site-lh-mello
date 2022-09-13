@@ -49,7 +49,8 @@ servicesSlider = () => {
         <p>${services[servicesIndex + 1].description}</p>
       </div>
     </div>
-    <div class='service'>
+    ${ services[servicesIndex + 2] ? `
+      <div class='service'>
       <div class="service-img-container">
         <img src=${services[servicesIndex + 2].img} alt=${services[servicesIndex + 2].name} class='service-img' />
       </div>
@@ -57,8 +58,10 @@ servicesSlider = () => {
         <h3>${services[servicesIndex + 2].name}</h3>
         <p>${services[servicesIndex + 2].description}</p>
       </div>
-    </div>
-  `) ;
+    </div>`
+      : ''
+    } `
+  ) ;
 }
 
 prevServicesBtn.addEventListener('click', () => {

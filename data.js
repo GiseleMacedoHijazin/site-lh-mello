@@ -14,11 +14,11 @@ const services = [
     description: 'Ótima resistência ao desgaste',
     img:'./img/supplies/ceramica_tecnica.png',
   },
-  {
-    name:'Ferobide',
-    description: 'Material soldável mais duro do mundo',
-    img:'./img/supplies/material_soldavel.png',
-  },
+  // {
+  //   name:'Ferobide',
+  //   description: 'Material soldável mais duro do mundo',
+  //   img:'./img/supplies/material_soldavel.png',
+  // },
   {
     name:'Placas e tubulações revestidas',
     description: 'Projetos sob desenho',
@@ -34,7 +34,7 @@ const services = [
 const partners = [
   './img/partners/gmw.png',
   './img/partners/aplipox.png',
-  './img/partners/ferobide.png',
+  // './img/partners/ferobide.png',
   './img/partners/solcera.png',
   './img/partners/maxweld.png',
 ];

@@ -269,17 +269,23 @@ h2 {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   /* margin-top: 10px; */
-  padding: 10px 20px;
+  padding: 20px;
+  height: 250px;
   background-color: #ffffff15;
-  border-radius: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .app-images-container img {
   width: 200px;
   height: 150px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 2px;
 }
@@ -460,12 +466,6 @@ footer h3 {
   font-weight: 500;
 }
 
-.app-images-container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
 .item-card {
   display: flex;
   flex-direction: column;
@@ -479,11 +479,13 @@ footer h3 {
   height: 0;
   margin: 0;
   padding: 0;
+  animation: hideImages .3s ease-in-out;
 }
 
 .show {
   visibility: visible;
-  animation: showImages .5s;
+  transition: height .5s, padding-top .5s;
+  transition-timing-function: ease-out;
 }
 
 .selected {
@@ -491,9 +493,9 @@ footer h3 {
   color: var(--blue) !important;
 }
 
-@keyframes showImages {
-  0% { height: 0;}
-  100% { height: 200px; }
+@keyframes hideImages {
+  0% { height: 250px; }
+  100% { height: 0px; padding: 0 20px; margin: 0;}
 }
 
 .move-in {

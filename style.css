@@ -232,24 +232,23 @@ h2 {
 
 #applications {
   background-color: var(--blue);
-  color: white
+  color: white;
+  padding-bottom: 40px;
 }
 
 #applications h2 {
   text-align: center;
-  padding-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 40px;
+  margin-bottom: 40px;
 }
 
 #applications-container {
   display: flex;
   flex-direction: column;
   padding: 0 15px;
-  max-width: 1000px;
   gap: 15px;
   justify-content: center;
   align-items: flex-start;
-  /* position: relative */
 }
 
 #applications-container .card-parent {
@@ -484,7 +483,7 @@ footer h3 {
 
 .show {
   visibility: visible;
-  transition: height .5s, padding-top .5s;
+  transition: height .4s, padding-top .4s;
   transition-timing-function: ease-out;
 }
 
@@ -637,19 +636,29 @@ footer h3 {
     width: 90vw;
     max-width: 1200px;
   }
-
+  
   #applications-container {
     margin: 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 20px;
+    max-width: 70vw;
   }
 
+  #applications-container .card {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+
   #applications-container .card-parent {
-    width: 32%;
+    width: 30%;
   }
 
   .app-images-container {
-    width: 309%;
+    width: 313%;
+    max-width: 63.7vw;
   }
 
   #about {

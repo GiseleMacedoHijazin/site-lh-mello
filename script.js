@@ -131,9 +131,9 @@ applications.forEach((application) => {
   if(!isMobile) {
     const position = applicationsContainer.children.length;
     if ([2, 5, 8].includes(position)) {
-      appImages.style.right = '105%';
+      appImages.style.right = '21.6vw';
     } else if ([3, 6, 9].includes(position)) {
-      appImages.style.right = '210%';
+      appImages.style.right = '43.1vw';
     }
   }
 })

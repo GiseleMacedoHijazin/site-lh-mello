@@ -308,7 +308,7 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding: 20px 25px;
+  padding: 50px 25px 0 25px;
   text-align: center;
 }
 
@@ -324,10 +324,15 @@ h2 {
   margin: auto;
   margin-top: 15px;
   line-height: 1.3rem;
+  text-align: left;
 }
 
 #feedbacks {
   text-align: center;
+}
+
+#feedbacks .slider {
+  margin: 10px 0;
 }
 
 #shown-feedback p {
@@ -545,6 +550,21 @@ footer h3 {
   100% {color: #333333;}
 }
 
+@media (max-width: 370px) {
+
+  #feedbacks {
+    padding: 20px 0;
+  }
+
+  #feedbacks .slider {
+    gap: 0;
+  }
+
+  #feedbacks .slider button{
+    margin: 0;
+  }
+} 
+
 @media (min-width: 760px) {
 
   #mobile-menu-icon {
@@ -636,7 +656,7 @@ footer h3 {
     width: 90vw;
     max-width: 1200px;
   }
-  
+
   #applications-container {
     margin: 0 auto;
     flex-direction: row;
@@ -663,7 +683,7 @@ footer h3 {
 
   #about {
     flex-direction: row;
-    padding: 10vh 8vw;
+    padding: 8vh 8vw 0;
   }
 
   #about-text p {

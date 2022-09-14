@@ -182,7 +182,6 @@ section {
 .slider button {
   cursor: pointer;
   width: auto;
-  margin: 0 10px;
   padding: 15px;
   color: var(--blue);
   font-weight: bold;
@@ -240,6 +239,10 @@ section {
   transition: background-color .3s;
 }
 
+#applications-container .card:hover {
+  background-color: #ffffff15;
+}
+
 .app-images-container {
   position: relative;
   overflow-x: auto;
@@ -249,9 +252,8 @@ section {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  /* margin-top: 10px; */
   padding: 20px;
-  height: 250px;
+  height: 260px;
   background-color: #ffffff15;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -270,12 +272,12 @@ section {
 }
 
 .app-images-container::-webkit-scrollbar-thumb {
-  background: #777;
+  background: #ccc;
   border-radius: 5px;
 }
 
 .app-images-container::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #aaa;
 } 
 
 #about {
@@ -342,19 +344,22 @@ section {
   align-items: center;
   width: 100%;
   gap: 30px;
+  text-align: left;
 }
 
 #contact-info .container {
-line-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 #contact-info li {
   list-style: none;
-  margin-bottom: 10px;
   font-size: 1.1rem;
+  line-height: 40px;
 }
 
-#info a{
+#info a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -363,10 +368,6 @@ line-height: 2rem;
 
 #info a:visited{
   color: var(--blue)
-}
-
-#info a img, #info a p {
-  margin: 0
 }
 
 #contact-form {
@@ -425,7 +426,6 @@ line-height: 2rem;
 .media-logos {
   width: 20px;
   margin-right: 10px;
-  margin-top: 18px;
 }
 
 footer {
@@ -452,7 +452,8 @@ footer h3 {
   height: 0;
   margin: 0;
   padding: 0;
-  animation: hideImages .3s ease-in-out;
+  transition: height .3s, padding-top .3s;
+  transition-timing-function: ease-in-out;
 }
 
 .show {
@@ -464,11 +465,6 @@ footer h3 {
 .selected {
   background-color: white !important;
   color: var(--blue) !important;
-}
-
-@keyframes hideImages {
-  0% { height: 250px; }
-  100% { height: 0px; padding: 0 20px; margin: 0;}
 }
 
 .move-in {
@@ -519,26 +515,31 @@ footer h3 {
   100% {color: #333333;}
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
 
   h2 {
     font-size: 1.7rem;
   }
 
   #feedbacks {
-    padding: 20px 0;
+    padding: 80px 0;
   }
 
   #feedbacks .slider {
     gap: 0;
   }
 
-  #feedbacks .slider button{
-    margin: 0;
+  #contact-info li {
+    font-size: 1rem;
   }
+
 } 
 
 @media (min-width: 760px) {
+
+  section {
+    padding: 8vh 6vw;
+  }
 
   #mobile-menu-icon {
     display: none;
@@ -565,7 +566,6 @@ footer h3 {
 
   #company {
     font-size: 1.3rem;
-    padding: 8vh 7vw;
     letter-spacing: 1px;
     line-height: 2.2rem;
     display: flex;
@@ -588,7 +588,6 @@ footer h3 {
   }
 
   #what-we-do {
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -675,7 +674,7 @@ footer h3 {
 
   #about {
     flex-direction: row;
-    padding: 8vh 8vw 0;
+    padding-bottom: 0;
   }
 
   #about-text p {
@@ -700,7 +699,6 @@ footer h3 {
 
   #contact {
     gap: 30px;
-    padding: 35px 0;
   }
   
   #contact-info {

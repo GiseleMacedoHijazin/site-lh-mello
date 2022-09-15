@@ -195,10 +195,6 @@ section {
   background-color: transparent;
 }
 
-.slider button:hover {
-  transform: scale(140%);
-}
-
 #partners-container {
   margin: 0 auto;
   margin-top: 50px;
@@ -244,10 +240,6 @@ section {
   cursor: pointer;
 }
 
-#applications-container .card:hover {
-  background-color: #ffffff15;
-}
-
 .app-images-container {
   position: relative;
   overflow-x: auto;
@@ -280,10 +272,6 @@ section {
   background: #ccc;
   border-radius: 5px;
 }
-
-.app-images-container::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
-} 
 
 #about {
   display: flex;
@@ -408,19 +396,13 @@ section {
   opacity: 0.4;
 }
 
-#contact-form button:hover:enabled {
-  opacity: 1;
-  cursor: pointer;
-}
-
 #contact-form button {
   width: 50%;
   align-self: flex-end;
   background-color: var(--blue);
   color: white;
   font-weight: bold;
-  opacity: 0.9;
-  border: 1px solid rgba(12, 58, 77, 0.8);
+  border: 1px solid rgba(12, 58, 77, 1);
   border-radius: 3px;
 }
 
@@ -741,6 +723,10 @@ footer h3 {
     font-size: 1.2rem;
   }
 
+  #contact-form button {
+    opacity: 0.9;
+  }
+
 }
 
 @media (min-width: 2000px) {
@@ -760,5 +746,26 @@ footer h3 {
   footer h3 {
     font-size: 1rem;
   }
+
+}
+
+@media (hover: hover) {
+
+  .slider button:hover {
+    transform: scale(140%);
+  }
+
+  #applications-container .card:hover {
+    background-color: #ffffff15;
+  }
+  
+  #contact-form button:hover:enabled {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .app-images-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  } 
 
 }

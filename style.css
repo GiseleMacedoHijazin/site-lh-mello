@@ -186,18 +186,17 @@ section {
 .slider button {
   cursor: pointer;
   width: auto;
-  padding: 15px;
   color: var(--blue);
   font-weight: bold;
   font-size: 25px;
-  transition: 0.3s ease;
+  transition: .2s ease-in-out;
   border: none;
   border-radius: 50%;
   background-color: transparent;
 }
 
 .slider button:hover {
-  background-color: rgba(255,255,255,0.3)
+  transform: scale(140%);
 }
 
 #partners-container {
@@ -242,6 +241,7 @@ section {
   width: 100%;
   transition: background-color .3s;
   text-align: left;
+  cursor: pointer;
 }
 
 #applications-container .card:hover {
@@ -420,7 +420,7 @@ section {
   color: white;
   font-weight: bold;
   opacity: 0.9;
-  border: 1px solid rgba(12, 58, 77, 0.7);
+  border: 1px solid rgba(12, 58, 77, 0.8);
   border-radius: 3px;
 }
 
@@ -474,7 +474,7 @@ footer h3 {
 }
 
 .move-in {
-  top: 75px !important;
+  top: 74px !important;
   animation: menu-in .5s;
 }
 

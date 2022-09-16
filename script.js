@@ -123,6 +123,8 @@ applications.forEach((application) => {
     appImages.append(itemCard);
   })
 
+  appImages.addEventListener('mousedown', (e) => mouseDownHandler(e, appImages));
+
   containerParent.append(container);
   containerParent.append(appImages);
   container.addEventListener('click', () => toggleContent(appImages, container));
@@ -187,6 +189,38 @@ mobileMenuIcon.addEventListener('click', () => {
     mobileMenuIcon.innerHTML = '&#x2715;';
   }
 });
+
+let pos = { top: 0, x: 0};
+let isDown = false;
+
+const mouseDownHandler = function (e, ele) {
+    pos = {
+        left: ele.scrollLeft,
+        x: e.clientX,
+    };
+
+    isDown = true;
+
+    ele.style.cursor = 'grabbing';
+    ele.style.userSelect = 'none';
+
+    ele.addEventListener('mouseup', () => mouseUpHandler(ele));
+    ele.addEventListener('mousemove', (e) => mouseMoveHandler(e, ele));
+
+};
+
+const mouseMoveHandler = function (e, ele) {
+  if (!isDown) return;
+  const dx = e.clientX - pos.x;
+  ele.scrollLeft = pos.left - dx;
+};
+
+const mouseUpHandler = function (ele) {
+  isDown = false;
+  ele.removeEventListener('mousemove', (e) => mouseMoveHandler(e, ele));
+  ele.style.cursor = 'grab';
+  ele.style.removeProperty('user-select');
+};
 
 feedbackSlider();
 servicesSlider();

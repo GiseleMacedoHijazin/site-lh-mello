@@ -755,6 +755,10 @@ footer h3 {
     transform: scale(140%);
   }
 
+  .app-images-container {
+    cursor: grab;
+  }
+
   #applications-container .card:hover {
     background-color: #ffffff15;
   }

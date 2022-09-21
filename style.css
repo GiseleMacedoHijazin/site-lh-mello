@@ -212,7 +212,7 @@ section {
 #partners-container img {
   width: 60vw;
   max-width: 300px;
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
 
 #applications {

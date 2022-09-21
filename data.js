@@ -36,7 +36,7 @@ const services = [
 ];
 
 const partners = [
-  './img/partners/gmw.png',
+  './img/partners/gmw_invertida.png',
   './img/partners/aplipox.png',
   // './img/partners/ferobide.png',
   './img/partners/solcera.png',

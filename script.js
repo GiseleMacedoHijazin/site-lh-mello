@@ -26,6 +26,10 @@ servicesSlider = () => {
         <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} />
         <h3>${services[servicesIndex].name}</h3>
         <p>${services[servicesIndex].description}</p>
+        ${ services[servicesIndex].site
+          ? `<a href=${services[servicesIndex].site} target='_blank'>Site</a>`
+          : ""
+        }
       </div>
     `);
     return;
@@ -38,6 +42,10 @@ servicesSlider = () => {
       <div class="service-description">
         <h3>${services[servicesIndex].name}</h3>
         <p>${services[servicesIndex].description}</p>
+        ${ services[servicesIndex].site
+          ? `<a href=${services[servicesIndex].site} target='_blank'>Site</a>`
+          : ""
+        }
       </div>
     </div>
     <div class='service'>
@@ -47,18 +55,28 @@ servicesSlider = () => {
       <div class="service-description">
         <h3>${services[servicesIndex + 1].name}</h3>
         <p>${services[servicesIndex + 1].description}</p>
+        ${ services[servicesIndex + 1].site
+          ? `<a href=${services[servicesIndex + 1].site} target='_blank'>Site</a>`
+          : ""
+        }
       </div>
     </div>
-    ${ services[servicesIndex + 2] ? `
-      <div class='service'>
-      <div class="service-img-container">
-        <img src=${services[servicesIndex + 2].img} alt=${services[servicesIndex + 2].name} class='service-img' />
-      </div>
-      <div class="service-description">
-        <h3>${services[servicesIndex + 2].name}</h3>
-        <p>${services[servicesIndex + 2].description}</p>
-      </div>
-    </div>`
+    ${ services[servicesIndex + 2] ?
+      `
+        <div class='service'>
+          <div class="service-img-container">
+            <img src=${services[servicesIndex + 2].img} alt=${services[servicesIndex + 2].name} class='service-img' />
+          </div>
+          <div class="service-description">
+            <h3>${services[servicesIndex + 2].name}</h3>
+          <p>${services[servicesIndex + 2].description}</p>
+          ${ services[servicesIndex + 2].site
+              ? `<a href=${services[servicesIndex + 2].site} target='_blank'>Site</a>`
+            : ""
+          }
+          </div>
+        </div>
+      `
       : ''
     } `
   ) ;

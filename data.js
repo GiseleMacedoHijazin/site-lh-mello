@@ -3,16 +3,19 @@ const services = [
     name:'Consumíveis de solda',
     description: 'Eletrodos revestidos, varetas tig, arames sólidos e tubulares.',
     img:'./img/supplies/consumiveis_solda.jpg',
+    site: 'https://www.gmw.com.br/',
   },
   {
     name:'Resinas de alta performance',
     description: 'Aplicações na manutenção e reparo e revestimentos',
     img:'./img/supplies/resinas.png',
+    site: 'https://aplipox.com.br/',
   },
   {
     name:'Cerâmica técnica de alta alumina',
     description: 'Ótima resistência ao desgaste',
     img:'./img/supplies/ceramica_tecnica.png',
+    site: 'https://solcera.com.br/',
   },
   // {
   //   name:'Ferobide',
@@ -23,6 +26,7 @@ const services = [
     name:'Placas e tubulações revestidas',
     description: 'Projetos sob desenho',
     img:'./img/supplies/placas_tubulacoes.png',
+    site: 'http://www.maxweld.com.br/',
   },
   {
     name:'Palestras técnicas sobre soldagem ',

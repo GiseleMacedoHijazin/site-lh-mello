@@ -46,7 +46,7 @@ section {
 }
 
 #logo {
-  width: 90px;
+  width: 100px;
   height: auto;
 }
 
@@ -513,6 +513,10 @@ footer h3 {
     font-size: 1.7rem;
   }
 
+  #logo {
+    width: 90px;
+  }
+
   #what-we-do .slider button {
     padding: 10px;
   }
@@ -713,6 +717,10 @@ footer h3 {
 
   footer h3 {
     font-size: 1rem;
+  }
+
+  #logo {
+    width: 110px;
   }
 
   #partners {

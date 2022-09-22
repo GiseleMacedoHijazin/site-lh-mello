@@ -45,6 +45,18 @@ section {
   line-height: 2rem;
 }
 
+mark {
+  background-color: none;
+  color: white;
+  padding: 2px 0;
+  opacity: 0.95;
+  transition: background-position 2s ease-out;
+  background: linear-gradient(90deg, var(--blue) 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+
 #logo {
   width: 100px;
   height: auto;
@@ -116,6 +128,10 @@ section {
 
 #logo-container img {
   max-width: 60%;
+}
+
+#company {
+  font-size: 1.1rem;
 }
 
 #company hr {
@@ -297,8 +313,9 @@ section {
   width: 80%;
   margin: auto;
   margin-top: 15px;
-  line-height: 1.3rem;
+  line-height: 1.7rem;
   text-align: left;
+  font-size: 1.1rem;
 }
 
 #feedbacks .slider {
@@ -569,7 +586,7 @@ footer h3 {
   }
 
   #company {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: 1px;
     line-height: 2.2rem;
     display: flex;
@@ -666,7 +683,7 @@ footer h3 {
   }
 
   #about-text p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: 30px;
     line-height: 2rem;
   }
@@ -674,6 +691,7 @@ footer h3 {
   #shown-feedback.slider-container {
     flex-direction: column;
     justify-content: center;
+    height: auto;
   }
 
   #shown-feedback p {

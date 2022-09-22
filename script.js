@@ -12,6 +12,17 @@ const nextFeedbackBtn = document.getElementById('next-btn-feedback');
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
 const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+const textHighlight = document.querySelectorAll('mark');
+
+textHighlight.forEach((text) => {
+  const observer = new IntersectionObserver((element) => {
+    if(element[0].isIntersecting === true) {
+      text.style.backgroundPosition = '0 0'
+    }
+  }, { threshold: [1] });
+
+  observer.observe(text)
+})
 
 video.playbackRate = 0.4;
 

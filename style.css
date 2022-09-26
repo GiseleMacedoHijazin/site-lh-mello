@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@700&family=Work+Sans:wght@400;700&display=swap');
+
+
 :root {
   --yellow: #FABA58;
   --blue: #0C394D;
@@ -7,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
 }
 
 html {
@@ -15,7 +19,7 @@ html {
 
 body {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Work Sans', sans-serif;
   color: var(--blue);
 }
 
@@ -35,12 +39,12 @@ h2 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 2rem;
+  font-family: Enriqueta, sans-serif;
 }
 
 section {
   padding: 50px 25px;
   font-size: 1rem;
-  font-weight: 500;
   text-align: center;
   line-height: 2rem;
 }
@@ -394,7 +398,7 @@ mark {
 #contact-form input, #contact-form textarea, #contact-form button {
   padding: 5px;
   font-size: 1rem;
-  font-family: sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 #contact-form input, #contact-form textarea {
@@ -446,7 +450,6 @@ footer {
 
 footer h3 {
   font-size: 0.8rem;
-  font-weight: 500;
 }
 
 .item-card {

@@ -66,7 +66,7 @@ const customerFeedback = [
   },
 ];
 
-const applications = [
+const applicationsUnsorted = [
   { 
     name: 'Forjaria',
     content: [
@@ -191,6 +191,13 @@ const applications = [
       { text: 'Dimensional', img: './img/applications/manutencao/dimensional.jpg' },
       { text: 'Bombas, dimensional e revestimento', img: './img/applications/manutencao/bombas_dim_rev.jpg' },
       { text: 'Mineração de areia', img: './img/applications/manutencao/mineracao_areia.jpeg' },
+      { text: 'Eixos', img: './img/applications/manutencao/eixos.jpg' },
     ],
   },
 ];
+
+const applications = applicationsUnsorted.sort((a, b) => {
+  if (a.name > b.name) return 1;
+  if (a.name < b.name) return -1;
+  return 0;
+});

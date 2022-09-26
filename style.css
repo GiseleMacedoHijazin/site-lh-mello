@@ -241,7 +241,7 @@ mark {
   flex-direction: column;
   padding: 0 15px;
   gap: 15px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
@@ -282,6 +282,7 @@ mark {
   margin-bottom: 15px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 2px;
+  -webkit-user-drag: none;
 }
 
 .app-images-container::-webkit-scrollbar {

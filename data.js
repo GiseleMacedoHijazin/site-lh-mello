@@ -172,4 +172,25 @@ const applications = [
       { text: 'Revestimento do lavador', img: './img/applications/mineracao/lavador.jpeg' },
     ],
   },
+  {
+    name: 'Soldagem e revestimentos',
+    content: [
+      { text: 'Roscas transportadoras', img: './img/applications/soldagem/roscas_transportadoras.jpg' },
+      { text: 'Arame tubular união', img: './img/applications/soldagem/arame_tubular.jpeg' },
+      { text: 'Facas p/ madeira e plástico', img: './img/applications/soldagem/facas.jpeg' },
+      { text: 'Alumínio', img: './img/applications/soldagem/aluminio.jpeg' },
+      { text: 'Arame tubular Metal Cored', img: './img/applications/soldagem/metal_cored.jpeg' },
+      { text: 'Martelos', img: './img/applications/soldagem/martelo.jpeg' },
+    ],
+  },
+  {
+    name: 'Manutenção e reparo',
+    content: [
+      { text: 'Fixação de barras', img: './img/applications/manutencao/fixacao.jpeg' },
+      { text: 'Tubulação', img: './img/applications/manutencao/tubulacoes.png' },
+      { text: 'Dimensional', img: './img/applications/manutencao/dimensional.jpg' },
+      { text: 'Bombas, dimensional e revestimento', img: './img/applications/manutencao/bombas_dim_rev.jpg' },
+      { text: 'Mineração de areia', img: './img/applications/manutencao/mineracao_areia.jpeg' },
+    ],
+  },
 ];

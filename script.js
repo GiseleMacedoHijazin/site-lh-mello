@@ -161,7 +161,7 @@ applications.forEach((application) => {
 
   if(!isMobile) {
     const position = applicationsContainer.children.length;
-    if ([2, 5, 8].includes(position)) {
+    if ([2, 5, 8, 11].includes(position)) {
       appImages.style.right = '21.6vw';
     } else if ([3, 6, 9].includes(position)) {
       appImages.style.right = '43.1vw';
@@ -235,6 +235,9 @@ const mouseDownHandler = function (e, ele) {
 
     ele.addEventListener('mouseup', () => mouseUpHandler(ele));
     ele.addEventListener('mousemove', (e) => mouseMoveHandler(e, ele));
+    ele.parentElement.addEventListener('mouseout', (e) => {
+      if (e.toElement.id === 'applications-container') mouseUpHandler(ele);
+    })
 
 };
 

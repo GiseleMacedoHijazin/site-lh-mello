@@ -1,4 +1,3 @@
-const video = document.getElementById('video');
 const mobileMenuIcon = document.getElementById('mobile-menu-icon');
 const menu = document.getElementById('nav-bar');
 const shownServices = document.getElementById('shown-services');
@@ -23,8 +22,6 @@ textHighlight.forEach((text) => {
 
   observer.observe(text)
 })
-
-video.playbackRate = 0.4;
 
 let servicesIndex = 0;
 const maxServices = isMobile ? services.length - 1 : 3; 

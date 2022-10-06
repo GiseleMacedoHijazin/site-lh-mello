@@ -381,7 +381,6 @@ mark {
 #info a {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
 }
 
@@ -727,6 +726,10 @@ footer h3 {
   }
 
   #contact-info li {
+    font-size: 1.2rem;
+  }
+
+  #contact-info li a {
     font-size: 1.2rem;
   }
 

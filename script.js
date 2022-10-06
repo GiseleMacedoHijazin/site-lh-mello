@@ -100,13 +100,6 @@ nextServicesBtn.addEventListener('click', () => {
   servicesSlider()
 });
 
-// partners.forEach((partner) => {
-//   const img = document.createElement('img');
-//   img.src = partner;
-//   img.alt = partner.split('/')[3].split('.')[0];
-//   partnersContainer.append(img);
-// });
-
 const toggleContent = (appImages, container) => {
   const currentShown = document.querySelector('.show');
   if (currentShown && currentShown !== appImages) { 
@@ -250,32 +243,6 @@ const mouseUpHandler = function (ele) {
   ele.style.cursor = 'grab';
   ele.style.removeProperty('user-select');
 };
-
-// const nextItem = (type, index, maxIndex, jump, callback) => {
-//   index === maxIndex ? index = 0 : index += jump;
-//   if (type === 'feed') {
-//     feedbackIndex = index
-//   } else {
-//     servicesIndex = index
-//   }
-//   callback();
-// }
-
-// function prevItem (type, index, maxIndex, jump, callback) {
-//   index === 0 ? index = maxIndex : index -= jump;
-//   if (type === 'feed') {
-//     feedbackIndex = index
-//   } else {
-//     servicesIndex = index
-//   }
-//   callback();
-// }
-
-// nextServicesBtn.addEventListener('click', () => nextItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
-// prevServicesBtn.addEventListener('click', () => prevItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
-
-// nextFeedbackBtn.addEventListener('click', () => nextItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
-// prevFeedbackBtn.addEventListener('click', () => prevItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
 
 feedbackSlider();
 servicesSlider();

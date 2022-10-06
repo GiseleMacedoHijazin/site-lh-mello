@@ -100,12 +100,12 @@ nextServicesBtn.addEventListener('click', () => {
   servicesSlider()
 });
 
-partners.forEach((partner) => {
-  const img = document.createElement('img');
-  img.src = partner;
-  img.alt = partner.split('/')[3].split('.')[0];
-  partnersContainer.append(img);
-});
+// partners.forEach((partner) => {
+//   const img = document.createElement('img');
+//   img.src = partner;
+//   img.alt = partner.split('/')[3].split('.')[0];
+//   partnersContainer.append(img);
+// });
 
 const toggleContent = (appImages, container) => {
   const currentShown = document.querySelector('.show');

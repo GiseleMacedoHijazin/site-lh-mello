@@ -30,12 +30,12 @@ const services = [
   },
 ];
 
-const partners = [
-  './img/partners/gmw_invertida.avif',
-  './img/partners/aplipox.avif',
-  './img/partners/solcera.avif',
-  './img/partners/maxweld.avif',
-];
+// const partners = [
+//   './img/partners/gmw_invertida.avif',
+//   './img/partners/aplipox.avif',
+//   './img/partners/solcera.avif',
+//   './img/partners/maxweld.avif',
+// ];
 
 const customerFeedback = [
   {

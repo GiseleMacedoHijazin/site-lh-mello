@@ -90,15 +90,15 @@ servicesSlider = () => {
   ) ;
 }
 
-// prevServicesBtn.addEventListener('click', () => {
-//   servicesIndex === 0 ? servicesIndex = maxServices : servicesIndex -= indexJump
-//   servicesSlider()
-// });
+prevServicesBtn.addEventListener('click', () => {
+  servicesIndex === 0 ? servicesIndex = maxServices : servicesIndex -= indexJump
+  servicesSlider()
+});
 
-// nextServicesBtn.addEventListener('click', () => {
-//   servicesIndex >= maxServices ? servicesIndex = 0 : servicesIndex += indexJump
-//   servicesSlider()
-// });
+nextServicesBtn.addEventListener('click', () => {
+  servicesIndex >= maxServices ? servicesIndex = 0 : servicesIndex += indexJump
+  servicesSlider()
+});
 
 partners.forEach((partner) => {
   const img = document.createElement('img');
@@ -176,15 +176,15 @@ function feedbackSlider () {
   `);
 }
 
-// prevFeedbackBtn.addEventListener('click', () => {
-//   feedbackIndex === 0 ? feedbackIndex = maxFeedback : feedbackIndex -= 1
-//   feedbackSlider()
-// });
+prevFeedbackBtn.addEventListener('click', () => {
+  feedbackIndex === 0 ? feedbackIndex = maxFeedback : feedbackIndex -= 1
+  feedbackSlider()
+});
 
-// nextFeedbackBtn.addEventListener('click', () => {
-//   feedbackIndex === maxFeedback ? feedbackIndex = 0 : feedbackIndex += 1
-//   feedbackSlider()
-// });
+nextFeedbackBtn.addEventListener('click', () => {
+  feedbackIndex === maxFeedback ? feedbackIndex = 0 : feedbackIndex += 1
+  feedbackSlider()
+});
 
 const formChange = () => {
   const name = document.getElementById('input-name').value;
@@ -251,31 +251,31 @@ const mouseUpHandler = function (ele) {
   ele.style.removeProperty('user-select');
 };
 
-const nextItem = (type, index, maxIndex, jump, callback) => {
-  index === maxIndex ? index = 0 : index += jump;
-  if (type === 'feed') {
-    feedbackIndex = index
-  } else {
-    servicesIndex = index
-  }
-  callback();
-}
+// const nextItem = (type, index, maxIndex, jump, callback) => {
+//   index === maxIndex ? index = 0 : index += jump;
+//   if (type === 'feed') {
+//     feedbackIndex = index
+//   } else {
+//     servicesIndex = index
+//   }
+//   callback();
+// }
 
-function prevItem (type, index, maxIndex, jump, callback) {
-  index === 0 ? index = maxIndex : index -= jump;
-  if (type === 'feed') {
-    feedbackIndex = index
-  } else {
-    servicesIndex = index
-  }
-  callback();
-}
+// function prevItem (type, index, maxIndex, jump, callback) {
+//   index === 0 ? index = maxIndex : index -= jump;
+//   if (type === 'feed') {
+//     feedbackIndex = index
+//   } else {
+//     servicesIndex = index
+//   }
+//   callback();
+// }
 
-nextServicesBtn.addEventListener('click', () => nextItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
-prevServicesBtn.addEventListener('click', () => prevItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
+// nextServicesBtn.addEventListener('click', () => nextItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
+// prevServicesBtn.addEventListener('click', () => prevItem('serv', servicesIndex, maxServices, indexJump, servicesSlider));
 
-nextFeedbackBtn.addEventListener('click', () => nextItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
-prevFeedbackBtn.addEventListener('click', () => prevItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
+// nextFeedbackBtn.addEventListener('click', () => nextItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
+// prevFeedbackBtn.addEventListener('click', () => prevItem('feed', feedbackIndex, maxFeedback, 1, feedbackSlider));
 
 feedbackSlider();
 servicesSlider();

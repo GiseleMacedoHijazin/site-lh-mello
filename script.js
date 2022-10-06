@@ -175,7 +175,7 @@ const maxFeedback = customerFeedback.length - 1;
 const feedbackSlider = () => {
   shownFeedback.innerHTML = (`
     <p>${ isMobile ? customerFeedback[feedbackIndex].mobile : customerFeedback[feedbackIndex].feedback}</p>
-    <h4>${customerFeedback[feedbackIndex].name}</h4>
+    <h3 class="feedback-name">${customerFeedback[feedbackIndex].name}</h3>
   `);
 }
 

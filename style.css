@@ -324,7 +324,7 @@ mark {
 }
 
 #feedbacks .slider {
-  margin: 10px 0;
+  margin: 10px;
 }
 
 #shown-feedback p {
@@ -343,7 +343,7 @@ mark {
   opacity: 0.5;
 }
 
-#shown-feedback h4 {
+.feedback-name {
   text-align: end;
   font-size: 1rem;
 }
@@ -548,10 +548,10 @@ footer h3 {
   #feedbacks {
     padding: 80px 0;
   }
-
+/* 
   #feedbacks .slider {
     gap: 0;
-  }
+  } */
 
   #contact-info li {
     font-size: 1rem;
@@ -711,7 +711,7 @@ footer h3 {
     left: -35px;
   }
   
-  #shown-feedback h4 {
+  .feedback-name {
     font-size: 1.2rem;
     align-self: flex-end;
   }

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@700&family=Work+Sans:wght@400;700&display=swap');
 
-
 :root {
   --yellow: #FABA58;
   --blue: #0C394D;
@@ -59,12 +58,6 @@ mark {
   background-size: 200% 100%;
   background-position: 100% 0;
 }
-
-
-/* #logo {
-  width: 100px;
-  height: auto;
-} */
 
 #nav-bar {
   background-color: white;
@@ -131,7 +124,6 @@ mark {
 }
 
 #logo-container img {
-  /* max-width: 60%; */
   width: 100%;
   height: auto;
 }
@@ -531,10 +523,6 @@ footer h3 {
     font-size: 1.7rem;
   }
 
-  /* #logo {
-    width: 90px;
-  } */
-
   #what-we-do .slider button {
     padding: 10px;
   }
@@ -546,10 +534,6 @@ footer h3 {
   #feedbacks {
     padding: 80px 0;
   }
-/* 
-  #feedbacks .slider {
-    gap: 0;
-  } */
 
   #contact-info li {
     font-size: 1rem;
@@ -745,10 +729,6 @@ footer h3 {
   footer h3 {
     font-size: 1rem;
   }
-
-  /* #logo {
-    width: 110px;
-  } */
 
   #partners {
     padding: 12vh 6vw;

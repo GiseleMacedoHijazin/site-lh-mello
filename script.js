@@ -119,48 +119,50 @@ const toggleContent = (appImages, container) => {
   }
 };
 
-applications.forEach((application) => {
-  const containerParent = document.createElement('div');
-  containerParent.className = 'card-parent';
-
-  const container = document.createElement('div');
-  container.className = 'card';
-  container.innerHTML = (
-    `<p>${application.name}</p>
-    <p>&plus;</p>`
-  );
-
-  const appImages = document.createElement('div');
-  appImages.className = 'hide app-images-container';
-
-  application.content.forEach((item) => {
-    const itemCard = document.createElement('div');
-    itemCard.className = 'item-card';
-    itemCard.innerHTML = (`
-      <img src=${item.img} alt=${item.text} />
-      <p>${item.text}</p>
-    `);
-    appImages.append(itemCard);
+const createApplications = () =>{
+  applications.forEach((application) => {
+    const containerParent = document.createElement('div');
+    containerParent.className = 'card-parent';
+  
+    const container = document.createElement('div');
+    container.className = 'card';
+    container.innerHTML = (
+      `<p>${application.name}</p>
+      <p>&plus;</p>`
+    );
+  
+    const appImages = document.createElement('div');
+    appImages.className = 'hide app-images-container';
+  
+    application.content.forEach((item) => {
+      const itemCard = document.createElement('div');
+      itemCard.className = 'item-card';
+      itemCard.innerHTML = (`
+        <img src=${item.img} alt=${item.text} />
+        <p>${item.text}</p>
+      `);
+      appImages.append(itemCard);
+    });
+  
+    appImages.addEventListener('mousedown', (e) => mouseDownHandler(e, appImages));
+    container.addEventListener('click', () => toggleContent(appImages, container));
+  
+    containerParent.append(container);
+    containerParent.append(appImages);
+    applicationsContainer.append(containerParent);
+  
+    // adjust img container position if desktop
+    if(!isMobile) {
+      const position = applicationsContainer.children.length;
+      if ([2, 5, 8, 11].includes(position)) {
+        appImages.style.right = '21.6vw';
+      }
+      if ([3, 6, 9].includes(position)) {
+        appImages.style.right = '43.1vw';
+      }
+    };
   });
-
-  appImages.addEventListener('mousedown', (e) => mouseDownHandler(e, appImages));
-  container.addEventListener('click', () => toggleContent(appImages, container));
-
-  containerParent.append(container);
-  containerParent.append(appImages);
-  applicationsContainer.append(containerParent);
-
-  // adjust img container position if desktop
-  if(!isMobile) {
-    const position = applicationsContainer.children.length;
-    if ([2, 5, 8, 11].includes(position)) {
-      appImages.style.right = '21.6vw';
-    }
-    if ([3, 6, 9].includes(position)) {
-      appImages.style.right = '43.1vw';
-    }
-  };
-})
+};
 
 let feedbackIndex = 0;
 const maxFeedback = customerFeedback.length - 1;
@@ -196,21 +198,23 @@ const formChange = () => {
 contactForm.addEventListener('keyup', formChange);
 submitBtn.addEventListener('click', () => alert('Mensagem enviada!'));
 
-mobileMenuIcon.addEventListener('click', () => {
-  if (menu.classList.contains('move-in')) {
-    menu.classList.remove('move-in');
-    menu.classList.add('move-out');
-    mobileMenuIcon.classList.remove('menu-open');
-    mobileMenuIcon.classList.add('menu-close');
-    mobileMenuIcon.innerHTML = '&#x2630;';
-  } else {
-    menu.classList.remove('move-out');
-    menu.classList.add('move-in');
-    mobileMenuIcon.classList.remove('menu-close');
-    mobileMenuIcon.classList.add('menu-open');
-    mobileMenuIcon.innerHTML = '&#x2715;';
-  }
-});
+if (isMobile) {
+  mobileMenuIcon.addEventListener('click', () => {
+    if (menu.classList.contains('move-in')) {
+      menu.classList.remove('move-in');
+      menu.classList.add('move-out');
+      mobileMenuIcon.classList.remove('menu-open');
+      mobileMenuIcon.classList.add('menu-close');
+      mobileMenuIcon.innerHTML = '&#x2630;';
+    } else {
+      menu.classList.remove('move-out');
+      menu.classList.add('move-in');
+      mobileMenuIcon.classList.remove('menu-close');
+      mobileMenuIcon.classList.add('menu-open');
+      mobileMenuIcon.innerHTML = '&#x2715;';
+    }
+  });
+};
 
 let pos = { top: 0, x: 0};
 let isDown = false;
@@ -250,4 +254,5 @@ const mouseUpHandler = function (ele) {
 window.onload = () => {
   feedbackSlider();
   servicesSlider();
+  createApplications();
 };

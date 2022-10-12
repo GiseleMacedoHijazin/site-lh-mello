@@ -228,12 +228,11 @@ mark {
   align-items: center;
   gap: 10px;
 }
-/* 
+
 #partners-container img {
-  width: 60vw;
-  max-width: 300px;
-  opacity: 0.85;
-} */
+  width: 100%;
+  height: auto;
+}
 
 #applications {
   background-color: var(--blue);

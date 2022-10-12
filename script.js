@@ -10,8 +10,9 @@ const prevFeedbackBtn = document.getElementById('prev-btn-feedback');
 const nextFeedbackBtn = document.getElementById('next-btn-feedback');
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
-const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 const textHighlight = document.querySelectorAll('mark');
+
+const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
 textHighlight.forEach((text) => {
   const observer = new IntersectionObserver((element) => {
@@ -116,7 +117,7 @@ const toggleContent = (appImages, container) => {
     appImages.classList.add('hide');
     container.classList.remove('selected');
   }
-}
+};
 
 applications.forEach((application) => {
   const containerParent = document.createElement('div');
@@ -124,10 +125,10 @@ applications.forEach((application) => {
 
   const container = document.createElement('div');
   container.className = 'card';
-  container.innerHTML = (`
-    <p>${application.name}</p>
-    <p>&plus;</p>
-  `);
+  container.innerHTML = (
+    `<p>${application.name}</p>
+    <p>&plus;</p>`
+  );
 
   const appImages = document.createElement('div');
   appImages.className = 'hide app-images-container';
@@ -140,23 +141,25 @@ applications.forEach((application) => {
       <p>${item.text}</p>
     `);
     appImages.append(itemCard);
-  })
+  });
 
   appImages.addEventListener('mousedown', (e) => mouseDownHandler(e, appImages));
+  container.addEventListener('click', () => toggleContent(appImages, container));
 
   containerParent.append(container);
   containerParent.append(appImages);
-  container.addEventListener('click', () => toggleContent(appImages, container));
   applicationsContainer.append(containerParent);
 
+  // adjust img container position if desktop
   if(!isMobile) {
     const position = applicationsContainer.children.length;
     if ([2, 5, 8, 11].includes(position)) {
       appImages.style.right = '21.6vw';
-    } else if ([3, 6, 9].includes(position)) {
+    }
+    if ([3, 6, 9].includes(position)) {
       appImages.style.right = '43.1vw';
     }
-  }
+  };
 })
 
 let feedbackIndex = 0;
@@ -244,5 +247,7 @@ const mouseUpHandler = function (ele) {
   ele.style.removeProperty('user-select');
 };
 
-feedbackSlider();
-servicesSlider();
+window.onload = () => {
+  feedbackSlider();
+  servicesSlider();
+};

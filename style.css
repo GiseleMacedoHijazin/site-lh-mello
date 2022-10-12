@@ -61,10 +61,10 @@ mark {
 }
 
 
-#logo {
+/* #logo {
   width: 100px;
   height: auto;
-}
+} */
 
 #nav-bar {
   background-color: white;
@@ -307,8 +307,6 @@ mark {
 }
 
 #profile-pic img {
-  width: 250px;
-  height: auto;
   box-shadow: 1px 1px 6px var(--blue);
   border-radius: 15%;
 }
@@ -435,7 +433,6 @@ mark {
 }
 
 .media-logos {
-  width: 20px;
   margin-right: 10px;
 }
 
@@ -532,9 +529,9 @@ footer h3 {
     font-size: 1.7rem;
   }
 
-  #logo {
+  /* #logo {
     width: 90px;
-  }
+  } */
 
   #what-we-do .slider button {
     padding: 10px;
@@ -747,9 +744,9 @@ footer h3 {
     font-size: 1rem;
   }
 
-  #logo {
+  /* #logo {
     width: 110px;
-  }
+  } */
 
   #partners {
     padding: 12vh 6vw;

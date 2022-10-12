@@ -12,26 +12,6 @@ const textHighlight = document.querySelectorAll('mark');
 
 const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
-if (isMobile) {
-  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-  const menu = document.getElementById('nav-bar');
-  mobileMenuIcon.addEventListener('click', () => {
-    if (menu.classList.contains('move-in')) {
-      menu.classList.remove('move-in');
-      menu.classList.add('move-out');
-      mobileMenuIcon.classList.remove('menu-open');
-      mobileMenuIcon.classList.add('menu-close');
-      mobileMenuIcon.innerHTML = '&#x2630;';
-    } else {
-      menu.classList.remove('move-out');
-      menu.classList.add('move-in');
-      mobileMenuIcon.classList.remove('menu-close');
-      mobileMenuIcon.classList.add('menu-open');
-      mobileMenuIcon.innerHTML = '&#x2715;';
-    }
-  });
-};
-
 textHighlight.forEach((text) => {
   const observer = new IntersectionObserver((element) => {
     if(element[0].isIntersecting === true) {
@@ -249,6 +229,26 @@ const mouseUpHandler = function (ele) {
   ele.removeEventListener('mousemove', (e) => mouseMoveHandler(e, ele));
   ele.style.cursor = 'grab';
   ele.style.removeProperty('user-select');
+};
+
+if (isMobile) {
+  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+  const menu = document.getElementById('nav-bar');
+  mobileMenuIcon.addEventListener('click', () => {
+    if (menu.classList.contains('move-in')) {
+      menu.classList.remove('move-in');
+      menu.classList.add('move-out');
+      mobileMenuIcon.classList.remove('menu-open');
+      mobileMenuIcon.classList.add('menu-close');
+      mobileMenuIcon.innerHTML = '&#x2630;';
+    } else {
+      menu.classList.remove('move-out');
+      menu.classList.add('move-in');
+      mobileMenuIcon.classList.remove('menu-close');
+      mobileMenuIcon.classList.add('menu-open');
+      mobileMenuIcon.innerHTML = '&#x2715;';
+    }
+  });
 };
 
 window.onload = () => {

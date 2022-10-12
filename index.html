@@ -31,7 +31,16 @@
     <section id="title">
       <video autoplay muted loop id="video" src="./img/video_site.webm"></video>
       <div id="logo-container">
-        <img src="./img/logos/logo_branco.avif" alt="Logo LH Mello - branco">
+        <picture>
+          <img
+            src="./img/logos/logo_branco_217w.avif"
+            alt="Logo LH Mello - branco"
+            width="217"
+            height="122"
+            srcset="./img/logos/logo_branco_217w.avif 217w, ./img/logos/logo_branco_310w.avif 310w, ./img/logos/logo_branco_446w.avif 446w, ./img/logos/logo_branco_598w.avif 598w, ./img/logos/logo_branco_666w.avif 666w"
+            sizes="(max-width: 380px) 217px, (max-width: 600px) 310px, (max-width: 760px) 446px, (max-width: 1024px) 598px, 666px"
+          >
+        </picture>
       </div>
     </section>
     <section id="company">

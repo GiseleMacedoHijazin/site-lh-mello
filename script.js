@@ -26,69 +26,6 @@ let servicesIndex = 0;
 const maxServices = isMobile ? services.length - 1 : 3; 
 const indexJump = isMobile ? 1 : 3;
 
-servicesSlider = () => {
-  if (isMobile) {
-    shownServices.innerHTML = (`
-      <div class='slider-container'>
-        <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} />
-        <h3>${services[servicesIndex].name}</h3>
-        <p>${services[servicesIndex].description}</p>
-        ${ services[servicesIndex].site
-          ? `<a href=${services[servicesIndex].site} target='_blank'>Site</a>`
-          : ""
-        }
-      </div>
-    `);
-    return;
-  }
-  shownServices.innerHTML = (`
-    <div class='service'>
-      <div class="service-img-container">
-        <img src=${services[servicesIndex].img} alt=${services[servicesIndex].name} class='service-img' />
-      </div>
-      <div class="service-description">
-        <h3>${services[servicesIndex].name}</h3>
-        <p>${services[servicesIndex].description}</p>
-        ${ services[servicesIndex].site
-          ? `<a href=${services[servicesIndex].site} target='_blank'>Site</a>`
-          : ""
-        }
-      </div>
-    </div>
-    <div class='service'>
-      <div class="service-img-container">
-        <img src=${services[servicesIndex + 1].img} alt=${services[servicesIndex + 1].name} class='service-img' />
-      </div>
-      <div class="service-description">
-        <h3>${services[servicesIndex + 1].name}</h3>
-        <p>${services[servicesIndex + 1].description}</p>
-        ${ services[servicesIndex + 1].site
-          ? `<a href=${services[servicesIndex + 1].site} target='_blank'>Site</a>`
-          : ""
-        }
-      </div>
-    </div>
-    ${ services[servicesIndex + 2] ?
-      `
-        <div class='service'>
-          <div class="service-img-container">
-            <img src=${services[servicesIndex + 2].img} alt=${services[servicesIndex + 2].name} class='service-img' />
-          </div>
-          <div class="service-description">
-            <h3>${services[servicesIndex + 2].name}</h3>
-          <p>${services[servicesIndex + 2].description}</p>
-          ${ services[servicesIndex + 2].site
-              ? `<a href=${services[servicesIndex + 2].site} target='_blank'>Site</a>`
-            : ""
-          }
-          </div>
-        </div>
-      `
-      : ''
-    } `
-  ) ;
-}
-
 prevServicesBtn.addEventListener('click', () => {
   servicesIndex === 0 ? servicesIndex = maxServices : servicesIndex -= indexJump
   servicesSlider()
@@ -98,6 +35,63 @@ nextServicesBtn.addEventListener('click', () => {
   servicesIndex >= maxServices ? servicesIndex = 0 : servicesIndex += indexJump
   servicesSlider()
 });
+
+servicesSlider = () => {
+  shownServices.innerHTML = '';
+  Array.from({ length: isMobile ? 1 : maxServices },
+    (_, i) => {
+      shownServices
+        .appendChild(createServiceElement(servicesIndex + i))
+        .classList.add('service');
+    }
+  );
+}
+
+createServiceElement = (index) => {
+  let container = document.createElement('div');
+  let img = createServiceImg(index)
+  let h3 = createServiceName(index)
+  let p = createServiceDescription(index)
+  container.appendChild(img);
+  container.appendChild(h3);
+  container.appendChild(p);
+  if(services[index].site){
+    let a = createServiceLink(index);
+    container.appendChild(a);
+}
+  return container;
+}
+
+createServiceImg = (index) => {
+  let imgContainer = document.createElement('div');
+  imgContainer.className = 'service-img-container';
+  let img = document.createElement('img');
+  img.src = services[index].img;
+  img.alt = services[index].name;
+  img.className = 'service-img';
+  imgContainer.appendChild(img);
+  return img;
+}
+
+createServiceName = (index) => {
+  let h3 = document.createElement('h3');
+  h3.innerText = services[index].name;
+  return h3;
+}
+
+createServiceDescription = (index) => {
+  let p = document.createElement('p');
+  p.innerText = services[index].description;
+  return p;
+}
+
+createServiceLink = (index) => {
+  let a = document.createElement('a');
+  a.href = services[index].site;
+  a.target = '_blank';
+  a.innerText = 'Site';
+  return a;
+}
 
 const toggleContent = (appImages, container) => {
   const currentShown = document.querySelector('.show');

@@ -12,6 +12,12 @@ const services = [
     site: 'https://aplipox.com.br/',
   },
   {
+    name:'Ferobide',
+    description: 'Material soldável, extra duro e de alta resistência',
+    img:'./img/supplies/material_soldavel.avif',
+    site: 'https://www.grupolpr.com.br/',
+  },
+  {
     name:'Cerâmica técnica de alta alumina',
     description: 'Ótima resistência ao desgaste',
     img:'./img/supplies/ceramica_tecnica.avif',

@@ -111,6 +111,11 @@
     font-size: 1.7rem;
   }
 
+  #services-container {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
   #what-we-do .slider button {
     padding: 10px;
   }
@@ -125,6 +130,16 @@
 
   #contact-info li {
     font-size: 1rem;
+  }
+
+
+  #banner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #banner h3 {
+    font-size: 1.2rem;
   }
 
 } 

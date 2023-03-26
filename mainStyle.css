@@ -410,3 +410,31 @@ footer h3 {
   transition: height .2s, padding-top .2s, padding-bottom .2s;
   transition-timing-function: ease-in-out;
 }
+
+#banner {
+  background-color: black;
+  margin: 0 auto;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#banner h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+#banner p, #banner a {
+  font-size: 1.2rem;
+}
+
+#banner a, #banner a:visited {
+  color: white
+}
+
+#banner img {
+  height: auto;
+  width: 100%;
+  max-width: 1200px;
+}

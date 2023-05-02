@@ -53,11 +53,11 @@ const customerFeedback = [
     feedback: 'Profissional qualificado com amplo conhecimento gerando confiabilidade no atendimento de nossas necessidades. Sempre pronto a nos atender, contribuindo com dicas e informações importantes, nos auxiliando a sanar uma demanda relacionada a revestimentos que tínhamos em nossa empresa. Agradeço pela dedicação e excelência no atendimento prestado.', 
     mobile: 'Profissional qualificado com amplo conhecimento gerando confiabilidade no atendimento de nossas necessidades.'
   },
-  {
-    name: 'Adilson Moreno, Diretor Geral da GMW Welding',
-    feedback: 'Parabéns Mello, são essas trocas de conhecimento e experiências que fazem a empresa crescer cada vez mais.',
-    mobile: 'Parabéns Mello, são essas trocas de conhecimento e experiências que fazem a empresa crescer cada vez mais.'
-  },
+  // {
+  //   name: 'Adilson Moreno, Diretor Geral da GMW Welding',
+  //   feedback: 'Parabéns Mello, são essas trocas de conhecimento e experiências que fazem a empresa crescer cada vez mais.',
+  //   mobile: 'Parabéns Mello, são essas trocas de conhecimento e experiências que fazem a empresa crescer cada vez mais.'
+  // },
 ];
 
 const applicationsUnsorted = [

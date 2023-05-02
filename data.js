@@ -3,7 +3,8 @@ const services = [
     name:'Consumíveis de solda',
     description: 'Eletrodos revestidos, varetas tig, arames sólidos e tubulares.',
     img:'./img/supplies/consumiveis_solda.avif',
-    site: 'https://www.gmw.com.br/',
+    // site: 'https://www.gmw.com.br/',
+    site: 'https://www.nicrosol.com.br/',
   },
   {
     name:'Resinas de alta performance',

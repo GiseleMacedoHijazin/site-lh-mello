@@ -1,38 +1,37 @@
 const services = [
   {
     name:'Consumíveis de solda',
-    description: 'Eletrodos revestidos, varetas tig, arames sólidos e tubulares.',
+    description: 'Eletrodos revestidos, arames tubulares, arames Mig e varetas Tig, arco submerso.',
     img:'./img/supplies/consumiveis_solda.avif',
-    // site: 'https://www.gmw.com.br/',
     site: 'https://www.nicrosol.com.br/',
   },
   {
     name:'Resinas de alta performance',
-    description: 'Aplicações na manutenção e reparo e revestimentos',
+    description: 'Resinas PU, Epóxi e Graute Químico, Impermeabilizante. Adesivos Industriais. Soluções para Britagem',
     img:'./img/supplies/resinas.avif',
     site: 'https://aplipox.com.br/',
   },
   {
-    name:'Ferobide',
-    description: 'Material soldável, extra duro e de alta resistência',
-    img:'./img/supplies/material_soldavel.avif',
-    site: 'https://www.grupolpr.com.br/',
-  },
-  {
     name:'Cerâmica técnica de alta alumina',
-    description: 'Ótima resistência ao desgaste',
+    description: 'Revestimentos antiabrasivos com cerâmica de alta alumina. Tubulações, hextiles, tijolos para moinhos e chapas de desgaste.',
     img:'./img/supplies/ceramica_tecnica.avif',
     site: 'https://solcera.com.br/',
   },
   {
+    name:'INNOVA do Brasil',
+    description: 'Soluções em aços especiais e peças de desgaste.',
+    img:'./img/supplies/innova.avif',
+    site: 'https://innovadobrasil.com.br/',
+  },
+  {
     name:'Placas e tubulações revestidas',
-    description: 'Projetos sob desenho',
+    description: 'Chapas, tubos e peças bimetálicas revestidas com arames tubulares',
     img:'./img/supplies/placas_tubulacoes.avif',
     site: 'http://www.maxweld.com.br/',
   },
   {
-    name:'Palestras técnicas sobre soldagem ',
-    description: 'Focadas em processos.',
+    name:'Consultorias técnicas sobre soldagem ',
+    description: 'Consultoria técnica e motivacional em processos de soldagem.',
     img:'./img/supplies/palestras.avif',
   },
 ];
